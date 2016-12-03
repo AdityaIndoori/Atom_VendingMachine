@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tablet_selection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aditya.vendicinefinal.tabletSelection">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/doc_blur"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:text="Choose desired Tablets: "
+        android:id="@+id/title"
+        android:gravity="center"
+        android:layout_margin="18dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/tablet4rel"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet4Click">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table4timage"
+                    android:src="@drawable/okacetcold"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="18dp"
+                    android:text="OKACET COLD"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:id="@+id/tablet4_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="italic"
+                    android:textSize="30dp"
+                    android:text="treats common cold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 40"
+                    android:textSize="40sp"
+                    android:id="@+id/tablet4_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/tablet3rel"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet3Click">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table3timage"
+                    android:layout_weight="1"
+                    android:src="@drawable/metrogyl"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18dp"
+                    android:text="METROGYL - 400"
+                    android:textSize="33sp"
+                    android:id="@+id/tablet3_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:text=" treats stomach ache "
+></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 20"
+                    android:textSize="40sp"
+                    android:id="@+id/tablet3_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/tablet5rel"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet5Click">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table5timage"
+                    android:layout_weight="1"
+                    android:src="@drawable/eldoper"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18dp"
+                    android:text="ELDOPER"
+                    android:textSize="35sp"
+                    android:id="@+id/tablet5_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:text="controls loose motions "/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 40"
+                    android:textSize="40sp"
+                    android:id="@+id/tablet5_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/tablet2rel"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet2Click">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table2timage"
+                    android:layout_weight="1"
+                    android:src="@drawable/dolo650"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="DOLO - 650"
+                    android:layout_marginLeft="18dp"
+                    android:textSize="35sp"
+                    android:id="@+id/tablet2_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:text="treats fever and body pains"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 20"
+                    android:textSize="40sp"
+                    android:id="@+id/tablet2_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/tablet6rel"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet6Click">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table6timage"
+                    android:layout_weight="1"
+                    android:src="@drawable/gelusil"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="GELUSIL"
+                    android:textSize="35sp"
+                    android:layout_marginLeft="18dp"
+                    android:id="@+id/tablet6_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="italic"
+                    android:textSize="29dp"
+                    android:text="Treating acid indigestion, heartburn and gas"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 30"
+                    android:textSize="40sp"
+                    android:id="@+id/tablet6_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:id="@+id/tablet1rel"
+            android:elevation="8dp"
+            android:layout_margin="0dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet1Click">
+            <ImageView
+                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_height="match_parent"
+                android:id="@+id/table1timage"
+                android:src="@drawable/commontablet1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/table1timage"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18dp"
+                    android:text="PARACIP - 500"
+                    android:textSize="35sp"
+                    android:id="@+id/tablet1_name"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:text="fever, headache and body pains"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 20"
+                    android:id="@+id/tablet1_price"
+                    android:textSize="40sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/tablet7rel"
+            android:elevation="8dp"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="tablet7Click">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table7image"
+                    android:layout_weight="1"
+                    android:src="@drawable/meftalspas"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18dp"
+                    android:text="MEFTAL SPAS"
+                    android:textSize="35sp"
+                    android:id="@+id/tablet7_name"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    android:text="removes pain and relieves spasms"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 40"
+                    android:id="@+id/tablet7_price"
+                    android:textSize="40sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="Click here to go Back"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:onClick="exitActiv"
+            android:fontFamily="sans-serif-condensed"
+            android:background="@color/COntinueButton"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

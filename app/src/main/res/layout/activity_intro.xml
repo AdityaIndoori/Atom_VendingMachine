@@ -4,40 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aditya.vendicinefinal.Intro">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/doc_blur"
-        android:scaleType="centerCrop"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#04332727"
-        android:onClick="blueMenu"/>
+        android:onClick="blueMenu"
+        android:text="BLUETOOTH"/>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true">
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="VENDICINE"
-            android:textSize="60dp"
-            android:id="@+id/textView2"
-            android:layout_alignParentTop="true"
-            android:gravity="center"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:text="The Vendor for Your Medicine"
-            android:textStyle="italic"
-            android:id="@+id/textView"
-            android:layout_below="@id/textView2"
-            android:layout_centerHorizontal="true" />
-
+            android:src="@drawable/atom"
+            android:scaleType="fitCenter"/>
     </RelativeLayout>
 
     <Button
@@ -48,7 +29,17 @@
         android:id="@+id/continue_btn"
         android:backgroundTint="#9b9b9b"
         android:text="Touch to Continue.."
+        android:fontFamily="sans-serif"
         android:onClick="toMainAct"/>
+
+    <Button
+        android:text="Coin reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="coinReset"
+        android:id="@+id/coinRst"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>

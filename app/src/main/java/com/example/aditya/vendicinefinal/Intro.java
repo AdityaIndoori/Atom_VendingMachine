@@ -22,25 +22,59 @@ public class Intro extends AppCompatActivity {
     public static BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-    Button btn;
+    Button coinreset;
+    public static BluetoothDevice dispositivo;
+    public static double transNumb=0;
+    public static boolean fileFlag;
+    public static int coins=150;
+    public static int okacetQuant,bisleri,wild,zago,aloe,pulpy,sanzQuant,wipesQuant,metrogylQuant,eldoperQuant,doloQuant,gelusil,meftalQuant,nutriaQuant,nutribQuant,condomQuant,whisperQuant,waterQuant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-
+        coinreset=(Button)findViewById(R.id.coinRst);
+        coinreset.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                coins=150;
+                okacetQuant=23;
+                metrogylQuant=23;
+                eldoperQuant=23;
+                doloQuant=23;
+                gelusil=23;
+                meftalQuant=23;
+                nutriaQuant=18;
+                sanzQuant=18;
+                nutribQuant=18;
+                condomQuant=21;
+                whisperQuant=6;
+                bisleri=12;wild=6;zago=6;aloe=6;pulpy=6;
+                wipesQuant=6;
+                waterQuant=6;
+                Toast.makeText(Intro.this, "All the items are default values and Coins have been RESET to: "+coins, Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+        okacetQuant=2;
+        metrogylQuant=2;
+        eldoperQuant=2;
+        doloQuant=2;
+        gelusil=2;
+        meftalQuant=2;
+        nutriaQuant=2;
+        sanzQuant=2;
+        nutribQuant=2;
+        condomQuant=2;
+        whisperQuant=2;
+        bisleri=2;wild=2;zago=2;aloe=2;pulpy=2;
+        wipesQuant=2;
+        waterQuant=2;
+        fileFlag=true;
         Intent newint = getIntent();
         address = newint.getStringExtra(DeviceList.EXTRA_ADDRESS);
         boolean flag = newint.getBooleanExtra(DeviceList.START_FLAG,false);
-        btn=(Button)findViewById(R.id.continue_btn);
-        final Intent intent = new Intent(this,SelectionUI.class);
-/*        btn.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                startActivity(intent);
-                return true;
-            }
-        });*/
+
         if (flag)//If this is true it means the user has selected the bt device he wants to conect to
             new ConnectBT().execute(); //Call the class to connect
     }
@@ -63,7 +97,7 @@ public class Intro extends AppCompatActivity {
                 if (btSocket == null || !isBtConnected)
                 {
                     myBluetooth = BluetoothAdapter.getDefaultAdapter();//get the mobile bluetooth device
-                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
+                    dispositivo = myBluetooth.getRemoteDevice(address);//connects to the device's address and checks if it's available
                     btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     btSocket.connect();//start connection
@@ -75,6 +109,7 @@ public class Intro extends AppCompatActivity {
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Void result) //after the doInBackground, it checks if everything went fine
         {
@@ -107,10 +142,14 @@ public class Intro extends AppCompatActivity {
     public void toMainAct(View view){
         if (isBtConnected)
         {
-            Intent intent=new Intent(this,SelectionUI.class);
+            Intent intent=new Intent(this,dummyIntro.class);
             startActivity(intent);
         }
         else
             msg("Bluetooth is not connected");
+    }
+
+    public void coinReset(View v){
+        Toast.makeText(this, "The number of coins is: "+coins, Toast.LENGTH_SHORT).show();
     }
 }

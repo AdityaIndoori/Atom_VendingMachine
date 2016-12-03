@@ -1,15 +1,19 @@
 package com.example.aditya.vendicinefinal;
 
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -21,30 +25,17 @@ import java.util.List;
 public class SelectionUI extends AppCompatActivity {
 
     BluetoothSocket btSocket = null;
-    ListView listView;
-    ArrayAdapter<String> stringArrayAdapter;
     byte[] readBuffer;
-    int readBufferPosition;
+    int readBufferPosition;String Mdate,Mmonth,Myear,Edate,Emonth,Eyear;
     public InputStream mmInputStream;
-    inputReceiver receiver;
+    public static inputReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_ui);
-
-        listView=(ListView)findViewById(R.id.listView2);
         btSocket=Intro.btSocket;
-        int numberOfItems = 10;
-//ListView Part Starts
-        String[] productList = new String[numberOfItems];
-        for (int j=0;j<numberOfItems;j++){
-            productList[j]="Product "+j +"\nPrice: " + "$50";
-        }
-        List<String> listArray = new ArrayList<>(Arrays.asList(productList));
-        stringArrayAdapter= new ArrayAdapter<String>(this,R.layout.list_item,R.id.textView5,listArray);
-        listView.setAdapter(stringArrayAdapter);
-        //ListView Part ends
+/*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -67,7 +58,7 @@ public class SelectionUI extends AppCompatActivity {
                 }
 
             }
-        });
+        });*/
     }
 
     public void receiverInput(){
@@ -100,10 +91,9 @@ public class SelectionUI extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String aVoid) {
-            super.onPostExecute(aVoid);
-            toaster(aVoid);
-
+        protected void onPostExecute(String str1) {
+            super.onPostExecute(str1);
+            toaster(str1);
         }
     }
 
@@ -131,4 +121,107 @@ public class SelectionUI extends AppCompatActivity {
             return null;
         }
     }
+
+    public void tabletClick(View view){
+        Log.v("Click","Tablet");
+        Intent intent=new Intent(this,tabletSelection.class);
+        startActivity(intent);
+    }
+
+    public void barClick(View view){
+        Intent intent=new Intent(this,nutriSel.class);
+        startActivity(intent);
+    }
+
+    public void sanzClick(View view){
+        if (Intro.sanzQuant<1){
+            Intent popIntent = new Intent(this,PopupActivity.class);
+            popIntent.putExtra("String","The product you have chosen is out of stock");
+            startActivity(popIntent);
+        }
+        else {
+            Mdate="01";
+            Mmonth="01";
+            Myear="01";
+            Edate="02";Emonth="02";Eyear="02";
+            Intent intent=new Intent(this,otherSelection.class);
+            intent.putExtra("ItemName","Hand Sanitizer");
+            intent.putExtra("ItemPrice","80");
+            intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
+            intent.putExtra("exp",Edate+"/"+Emonth+"/"+Eyear);
+            startActivity(intent);
+        }
+    }
+
+    public void condClick(View view){
+        if (Intro.condomQuant<1){
+            Intent popIntent = new Intent(this,PopupActivity.class);
+            popIntent.putExtra("String","The product you have chosen is out of stock");
+            startActivity(popIntent);
+        }
+        else {
+            Mdate="01";
+            Mmonth="01";
+            Myear="01";
+            Edate="02";Emonth="02";Eyear="02";
+            Intent intent=new Intent(this,otherSelection.class);
+            intent.putExtra("ItemName","Condoms Packets");
+            intent.putExtra("ItemPrice","40");
+            intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
+            intent.putExtra("exp",Edate+"/"+Emonth+"/"+Eyear);
+            startActivity(intent);
+        }
+    }
+
+    public void sanClick(View view){
+
+        if (Intro.whisperQuant<1){
+            Intent popIntent = new Intent(this,PopupActivity.class);
+            popIntent.putExtra("String","The product you have chosen is out of stock");
+            startActivity(popIntent);
+        }
+        else {
+            Mdate="01";
+            Mmonth="01";
+            Myear="01";
+            Edate="02";Emonth="02";Eyear="02";
+            Intent intent=new Intent(this,otherSelection.class);
+            intent.putExtra("ItemName","Sanitary Napkins");
+            intent.putExtra("ItemPrice","100");
+            intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
+            intent.putExtra("exp",Edate+"/"+Emonth+"/"+Eyear);
+            startActivity(intent);
+        }
+    }
+
+    public void wipesClick(View view){
+        if (Intro.condomQuant<1){
+            Intent popIntent = new Intent(this,PopupActivity.class);
+            popIntent.putExtra("String","The product you have chosen is out of stock");
+            startActivity(popIntent);
+        }
+        else {
+            Mdate="01";
+            Mmonth="01";
+            Myear="01";
+            Edate="02";Emonth="02";Eyear="02";
+            Intent intent=new Intent(this,otherSelection.class);
+            intent.putExtra("ItemName","Wet Wipes");
+            intent.putExtra("ItemPrice","80");
+            intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
+            intent.putExtra("exp",Edate+"/"+Emonth+"/"+Eyear);
+            startActivity(intent);
+        }
+    }
+
+    public void drinkClick(View view){
+        Intent intent=new Intent(this,wipesSel.class);
+        startActivity(intent);
+    }
+
+    public void backSelClick(View view){
+        Intent intent= new Intent(this,dummyIntro.class);
+        startActivity(intent);
+    }
+
 }

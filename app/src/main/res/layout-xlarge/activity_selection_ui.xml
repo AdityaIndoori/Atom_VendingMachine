@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#42A5F5"
     tools:context="com.example.aditya.vendicinefinal.SelectionUI">
 
     <ImageView
@@ -16,14 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="10dp"
-        android:textSize="42sp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp"
         android:text="Choose a Category"
         android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-light"/>
+        android:layout_margin="12dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -40,11 +37,11 @@
             android:elevation="8dp"
             android:background="#5b0099cc"
             android:layout_alignParentTop="true"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
             android:onClick="tabletClick">
 
             <ImageView
-                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:id="@+id/tabletImg"
                 android:src="@drawable/tabimg"
@@ -58,53 +55,52 @@
                 android:textSize="28dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                />
+                android:textAllCaps="true"/>
         </RelativeLayout>
-
-        <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeight"
-                android:layout_weight="1"
-                android:id="@+id/relativeBar"
-                android:elevation="8dp"
-                android:background="#5b0099cc"
-                android:layout_margin="12dp"
-                android:onClick="barClick">
-
-                <ImageView
-                    android:layout_width="?android:attr/listPreferredItemHeight"
-                    android:layout_height="match_parent"
-                    android:id="@+id/barImg"
-                    android:src="@drawable/nutriimg"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/barImg"
-                    android:text="Nutrition Bar Chocolates"
-                    android:textSize="26dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    />
-            </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
             android:layout_weight="1"
-            android:id="@+id/relativeSanitizer"
+            android:id="@+id/relativeBar"
             android:elevation="8dp"
             android:background="#5b0099cc"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
+            android:onClick="barClick">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:id="@+id/barImg"
+                android:src="@drawable/nutri"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/barImg"
+                android:text="Nutri Bar Chocolates"
+                android:textSize="26dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textAllCaps="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/relativeSanz"
+            android:background="#5b0099cc"
+            android:layout_margin="5dp"
             android:onClick="sanzClick">
 
             <ImageView
-                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:id="@+id/sanzImg"
                 android:src="@drawable/detsanz"
-                android:scaleType="fitCenter" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -114,7 +110,7 @@
                 android:textSize="26dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                />
+                android:textAllCaps="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -124,11 +120,11 @@
             android:id="@+id/relativeCond"
             android:elevation="8dp"
             android:background="#5b0099cc"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
             android:onClick="condClick">
 
             <ImageView
-                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:id="@+id/condImg"
                 android:scaleType="centerCrop"
@@ -138,11 +134,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/condImg"
-                android:text="Condoms Packets"
+                android:text="Condom packets"
                 android:textSize="28dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                />
+                android:textAllCaps="true"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -150,17 +146,16 @@
             android:layout_height="?android:attr/listPreferredItemHeight"
             android:layout_weight="1"
             android:id="@+id/relativepads"
-            android:elevation="8dp"
             android:background="#5b0099cc"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
             android:onClick="sanClick">
 
             <ImageView
-                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:id="@+id/padsImg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sanitimg"/>
+                android:src="@drawable/whisper"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -170,7 +165,34 @@
                 android:textSize="28dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                />
+                android:textAllCaps="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="1"
+            android:id="@+id/relativeWipes"
+            android:background="#5b0099cc"
+            android:layout_margin="5dp"
+            android:onClick="wipesClick">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:id="@+id/wipesImg"
+                android:src="@drawable/wetwipes"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/wipesImg"
+                android:text="Wet Wipes"
+                android:textSize="26dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textAllCaps="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -178,17 +200,16 @@
             android:layout_height="?android:attr/listPreferredItemHeight"
             android:layout_weight="1"
             android:id="@+id/relativebottle"
-            android:elevation="8dp"
             android:background="#5b0099cc"
-            android:layout_margin="12dp"
+            android:layout_margin="5dp"
             android:onClick="drinkClick">
 
             <ImageView
-                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:id="@+id/bottleImg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/waterimg"/>
+                android:src="@drawable/drinks"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -198,9 +219,30 @@
                 android:textSize="28dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                />
+                android:textAllCaps="true"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_weight="0.2"
+            android:id="@+id/backBtnSel"
+            android:elevation="8dp"
+            android:layout_margin="12dp"
+            android:onClick="backSelClick"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Click here to Cancel Transaction"
+                android:gravity="center"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:background="@color/COntinueButton"
+                android:textColor="@android:color/background_dark" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 

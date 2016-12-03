@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_money_deal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aditya.vendicinefinal.moneyDeal">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/doc_blur"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/iconView"
+        android:scaleType="centerCrop"
+        android:padding="8dp"
+        android:layout_marginTop="32dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iconView"
+        android:layout_alignLeft="@id/iconView"
+        android:layout_alignRight="@id/iconView"
+        android:id="@+id/productIDName"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:textSize="40sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/productIDName"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/productPrice2"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="40sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="80dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/okbutton"
+            android:text="OK"
+            android:textSize="42sp"
+            android:padding="22dp"
+            android:onClick="okClick"
+            android:background="@color/COntinueButton"
+            android:layout_margin="12dp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/backMoneyBtn"
+            android:text="CANCEL"
+            android:textSize="42sp"
+            android:padding="22dp"
+            android:onClick="backMoneyClick"
+            android:layout_margin="12dp"
+            android:background="@color/COntinueButton"
+            android:layout_weight="1"
+            android:layout_alignTop="@+id/okbutton" />
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

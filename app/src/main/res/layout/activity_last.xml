@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_last"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aditya.vendicinefinal.lastActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/doc_blur"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/lastImgIcon"
+        android:scaleType="fitStart"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/thanyou"
+            android:gravity="center"
+            android:layout_below="@+id/lastImgIcon"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lasMessage"
+            android:layout_weight="1"
+            android:textSize="36sp"
+            android:layout_below="@+id/thanyou"
+            android:gravity="center"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_margin="12dp"
+            />
+
+
+    <Button
+        android:text="OK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="22dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:textSize="42sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button2"
+        android:onClick="okClicked"
+        android:background="@color/COntinueButton"
+        android:layout_marginBottom="80dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/coinReset"
+        android:id="@+id/btLost" />
+</RelativeLayout>

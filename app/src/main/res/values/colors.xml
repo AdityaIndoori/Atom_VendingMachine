@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#252b99a3</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="SLastButtonColour">#2b64b5f6</color>
+    <color name="COntinueButton">#840db9b7</color>
+    <color name="PopUpBG">#61ffffff</color>
+    <color name="coinReset">#19ffffff</color>
+    <color name="xBtn">#8ce0151f</color>
+    <color name="ConfirmBtn">#1976d2</color>
 </resources>
