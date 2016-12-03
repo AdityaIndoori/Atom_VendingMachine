@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_nutri_sel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aditya.vendicinefinal.nutriSel">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/doc_blur"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:text="Choose desired Nutri bar: "
+        android:id="@+id/title"
+        android:gravity="center"
+        android:layout_margin="18dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nutria"
+            android:elevation="8dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="nutria">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/table4timage"
+                    android:src="@drawable/nutria"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginLeft="18dp"
+                    android:text="RiteBite\nNutri Bar\n(Merry Berry)"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:id="@+id/nutria_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 40"
+                    android:textSize="40sp"
+                    android:id="@+id/nutria_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tablet3rel"
+            android:elevation="8dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="#5b0099cc"
+            android:clickable="true"
+            android:onClick="nutrib">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/nutrib"
+                    android:layout_weight="1"
+                    android:src="@drawable/nutrib"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18dp"
+                    android:text="RiteBite\nNutri bar\n(Choco Delite)"
+                    android:textSize="33sp"
+                    android:id="@+id/nutrib_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="₹ 40"
+                    android:textSize="40sp"
+                    android:id="@+id/nutrib_price" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Click here to go Back"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:padding="12dp"
+            android:textStyle="bold"
+            android:onClick="exitActiv"
+            android:fontFamily="sans-serif-condensed"
+            android:background="@color/COntinueButton"
+            android:layout_margin="8dp"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
