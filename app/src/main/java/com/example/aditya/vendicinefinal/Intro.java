@@ -105,7 +105,7 @@ public class Intro extends AppCompatActivity {
         address = newint.getStringExtra(DeviceList.EXTRA_ADDRESS);
         boolean flag = newint.getBooleanExtra(DeviceList.START_FLAG,false);
 
-        if (flag)//If this is true it means the user has selected the bt device he wants to conect to
+        if (flag)//If this is true it means the user has selected the bt device he wants to connect to
             new ConnectBT().execute(); //Call the class to connect
     }
 

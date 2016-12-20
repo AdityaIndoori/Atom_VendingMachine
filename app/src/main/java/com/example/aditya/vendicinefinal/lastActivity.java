@@ -45,21 +45,16 @@ import static com.example.aditya.vendicinefinal.Intro.transNumb;
 public class lastActivity extends AppCompatActivity {
 
     Button btlostbtn;
-    int Balance;//Balance = moneyEntered - totalMoneyPurchase
+    int Balance;//The balance to be entered into the machine by consumer: Balance = moneyEntered - totalMoneyPurchase (Yea -ve value...check out the rest of the code for a better understanding!)
     TextView lastMsg;
     public static String data="";
     int noteReceivedInt=0;
-    boolean mailsucc=false;
     Session session = null;
     ProgressDialog pdialog = null;
     Context context = null;
-    String rec, subject, textMessage;
     public int changeRs;
     ImageView icon;
     Boolean autoClick;
-/*
-    public static int notesEntered=1;
-*/
     //------------------------
     byte[] readBuffer;
     int readBufferPosition;
@@ -75,6 +70,7 @@ public class lastActivity extends AppCompatActivity {
     //----------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //You will need to work those Grey cells out to figure out this part of the app...
         autoClick=false;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_last);
@@ -84,13 +80,6 @@ public class lastActivity extends AppCompatActivity {
         context = this;
         TextView tnks = (TextView)findViewById(R.id.thanyou);
         icon = (ImageView)findViewById(R.id.lastImgIcon);
-/*
-        TextView noteCount=(TextView)findViewById(R.id.noteCount);
-        if (notesEntered==1)
-        noteCount.setText("You've entered "+notesEntered+" Note till now");
-        else
-            noteCount.setText("You've entered "+notesEntered+" Notes till now");
-*/
         btlostbtn=(Button)findViewById(R.id.btLost);
         btlostbtn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -102,8 +91,6 @@ public class lastActivity extends AppCompatActivity {
         });
         Bundle extras = getIntent().getExtras();
         Balance = extras.getInt("Balance");
-        Log.v("Balance amount:", "" + Balance);
-
         if (Balance == 0) {
             icon.setImageResource(R.drawable.atom);
             Log.v("Balance","the Balance is 0");
@@ -111,7 +98,6 @@ public class lastActivity extends AppCompatActivity {
             flag3=false;//Thank You!
             tnks.setTextSize(86);
             tnks.setText("ThankYou!");
-            //lastMsg.setText("Please collect your product\nClick OK to End Transaction\nStay Healthy!");
             sender("Activate");//Activate motor AND Email
             Handler handler2 = new Handler();
             handler2.postDelayed(new Runnable() {
@@ -170,7 +156,7 @@ public class lastActivity extends AppCompatActivity {
     }
     //---------------------------------------------------------------------
     public void sender(final String i) {
-
+        //To Write data to the bluetooth(I Love this, cause its not a workaround!)
         final Handler handler = new Handler();
 
         handler.postDelayed(new Runnable() {
@@ -196,11 +182,11 @@ public class lastActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String str1) {
+            //The logic is strong with this one! Take a paper, and do all the possible combinations of inputs to understand thoroughly
             super.onPostExecute(str1);
             if (flag == 2) {
                 flag++;
                 noteReceived = "" + str1;
-                //Toast.makeText(moneyDeal.this, output, Toast.LENGTH_SHORT).show();
                 Log.v("onpostLA", "2) The output is:" + noteReceived);
             }
             else if (flag == 3) {
@@ -247,6 +233,7 @@ public class lastActivity extends AppCompatActivity {
     }
     //---------------------------------------------------------------------
     public String inputReception() {
+        //For receiving input data
         readBufferPosition = 0;
         readBuffer = new byte[1024];
         String inputData = null;
@@ -274,6 +261,7 @@ public class lastActivity extends AppCompatActivity {
     }
     //----------------------------------------------------------------------
     public void receiverInput(){
+        //Receive Data from Bluetooth(I Hate this cause it is a workaround, If you can please find a batter way)
         final Handler handler = new Handler();
 
         handler.postDelayed(new Runnable() {
@@ -290,6 +278,7 @@ public class lastActivity extends AppCompatActivity {
     }
     //----------------------------------------------------------------------
     public void confsim(String string){
+        //Simulate the Confirm Button
         flag++;
         sender(string);
         receiverInput();
@@ -297,9 +286,6 @@ public class lastActivity extends AppCompatActivity {
     //-------------------------------------------------------------------------
     public void receiveIt(){
         //receive the amount entered into the note validator and toast it!
-/*
-        notesEntered++;
-*/
         flag=0;
         flag++;
         sender("Money Entered");
@@ -325,9 +311,6 @@ public class lastActivity extends AppCompatActivity {
                 },1500);
             }
             else if (!flag3){
-/*
-                notesEntered=1;
-*/
                 moneyDeal.maxQuantity();
                 Intro.transNumb++;
                 Calendar calendar = Calendar.getInstance();
@@ -335,7 +318,6 @@ public class lastActivity extends AppCompatActivity {
                 String date = simpleDateFormat.format(calendar.getTime());
                 data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
                 Log.v("Transaction",data);
-                //fileWrite();
                 //-----------
                 Properties props = new Properties();
                 props.put("mail.smtp.host", "smtp.gmail.com");
@@ -363,7 +345,7 @@ public class lastActivity extends AppCompatActivity {
             messageTextView.setTextSize(32);
             toast.show();
         }
-    }
+    }//The Actual action of clicking OK Button
     //--------------------------------------------------------------
     public void okClicSim(){
         if (fileBTN){
@@ -379,19 +361,13 @@ public class lastActivity extends AppCompatActivity {
                 },1500);
             }
             else if (!flag3){
-/*
-                notesEntered=1;
-*/
                 moneyDeal.maxQuantity();
                 Intro.transNumb++;
                 Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
                 String date = simpleDateFormat.format(calendar.getTime());
-//              data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
-
                 data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
                 Log.v("Transaction",data);
-                //fileWrite();
                 //-----------
                 Properties props = new Properties();
                 props.put("mail.smtp.host", "smtp.gmail.com");
@@ -418,44 +394,7 @@ public class lastActivity extends AppCompatActivity {
             TextView messageTextView = (TextView) group.getChildAt(0);
             messageTextView.setTextSize(0);
         }
-    }
-    //---------------------------------------------------------------------------------
-    public void fileWrite(){
-        //--------------files part starts
-        String filename1 = "transaction.txt";
-        try {
-            FileOutputStream fOs = openFileOutput(filename1,MODE_PRIVATE);
-            fOs.write(data.getBytes());
-            fOs.close();
-            Log.v("FILE","File has been written");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //----------------files part ends
-    }
-    //---------------------------------------------------------------------------------
-    public void fileRead(){
-        String filename = "transaction.txt";
-        try {
-            FileInputStream fIs = openFileInput(filename);
-            InputStreamReader iSr = new InputStreamReader(fIs);
-            BufferedReader bFr = new BufferedReader(iSr);
-
-            String sLine = null;
-            String out="";
-            while ((sLine=bFr.readLine())!=null){
-                out+=sLine;
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-    //---------------------------------------------
+    }//Simulate the OK Clicking action
 
     class RetreiveFeedTask extends AsyncTask<String, Void, String> {
 
@@ -490,446 +429,5 @@ public class lastActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-    //Steps in Arduino:
-    //1)If the received string is "Money EnteredMoney Entered" then:
-    //1a)Turn on the vending machine and take an input and return the corresponding output
-    //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//----------------------------------------------------------------
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_last);
-        autoClick=false;//A Flag for Auto Click
-        lastMsg = (TextView) findViewById(R.id.lasMessage);
-        changeRs=0;
-        context = this;
-
-        TextView tnks = (TextView)findViewById(R.id.thanyou);
-        icon = (ImageView)findViewById(R.id.lastImgIcon);
-
-        btlostbtn=(Button)findViewById(R.id.btLost);
-        btlostbtn.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),Intro.class);
-                startActivity(intent);
-                return false;
-            }
-        });
-        Bundle extras = getIntent().getExtras();
-        Balance = extras.getInt("Balance");
-
-        if (Balance == 0) {
-            icon.setImageResource(R.drawable.atom);
-            Log.v("Balance","the Balance is 0");
-            Log.v("FileFlag","The value of FileFlag is: "+Intro.fileFlag);
-            flag3=false;//Thank You!
-            tnks.setTextSize(86);
-            tnks.setText("ThankYou!");
-            //lastMsg.setText("Please collect your product\nClick OK to End Transaction\nStay Healthy!");
-            sender("Activate");//Activate motor AND Email
-            Handler handler2 = new Handler();
-            handler2.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    okClicSim();
-                }
-            },10000);
-                }
-        else if (Balance < 0) {            //means the user should insert more money
-            flag3=true;
-            Balance = -Balance;
-            if (Balance <= 10) {
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 10 more\nAnd click OK");
-            }
-            else if (Balance > 10 && Balance <= 20) {
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 20 more\nAnd click OK");
-            }
-            else if (Balance > 20 && Balance <= 50) {
-                lastMsg.setText("Balance Amount to be Entered: ₹  "+Balance+"\n"+"Please enter  ₹ 50 more\nAnd click OK");
-            }
-            else if (Balance > 50 && Balance <= 100) {
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 100 more\nAnd click OK");
-            }
-            else if (Balance>100){
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter ₹ 100 more\nAnd click OK");
-            }
-        }
-        else if (Balance > 0) {
-            icon.setImageResource(R.drawable.atom);
-            Intro.coins=Intro.coins-(Balance/10);
-            flag3=false;
-            sender("CoinDispenser "+Balance);
-            changeRs=Balance;
-            tnks.setTextSize(86);
-            tnks.setText("ThankYou!");
-            lastMsg.setText("Please Collect your product and "+ "₹ "+Balance+".00 Rupees\n And Click OK to End Transaction\n" +
-                    "Stay Healthy!" );
-            Handler handler3 = new Handler();
-            handler3.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    if (!autoClick)
-                    okClicSim();
-                }
-            },10000);
-        }
-
-    }
-    //---------------------------------------------------------------------
-    public void sender(final String i) {
-
-        final Handler handler = new Handler();
-
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                try {
-                    btSocket.getOutputStream().write(i.getBytes());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, 500);
-    }
-    //-----------------------------------------------------------------------
-    public class inputReceiver extends AsyncTask<Void, Void, String> {
-        @Override
-        protected String doInBackground(Void... voids) {
-            String str = null;
-            while (str == null) {
-                str = inputReception();
-            }
-            return str;
-        }
-
-        @Override
-        protected void onPostExecute(String str1) {
-            super.onPostExecute(str1);
-            if (flag == 2) {
-                flag++;
-                noteReceived = "" + str1;
-                //Toast.makeText(moneyDeal.this, output, Toast.LENGTH_SHORT).show();
-                Log.v("onpostLA", "2) The output is:" + noteReceived);
-            }
-            else if (flag == 3) {
-                Log.v("onpostLA", "3) The output is:" + noteReceived);
-                if (!"".equals(noteReceived)){
-                    flag2=true;
-                    noteReceivedInt=Integer.parseInt(noteReceived);
-                    Log.v("onpostLA", "4) The output Integer is:" + noteReceivedInt);
-                    Log.v("Note Entered","The entered note is: "+ noteReceivedInt);
-                    if (noteReceivedInt>=10 && noteReceivedInt<=100){
-                        if (noteReceivedInt==10){
-                            moneyDeal.ten++;
-                            Intro.totalnotes++;
-                        }
-                        if (noteReceivedInt==20){
-                            moneyDeal.twenty++;
-                            Intro.totalnotes++;
-                        }
-                        if (noteReceivedInt==50){
-                            moneyDeal.fifty++;
-                            Intro.totalnotes++;
-                        }
-                        if (noteReceivedInt==100){
-                            moneyDeal.hundred++;
-                            Intro.totalnotes++;
-                        }
-                        Intent lastIntent = new Intent(getApplicationContext(),lastActivity.class);
-                        lastIntent.putExtra("Balance", noteReceivedInt-Balance);
-                        startActivity(lastIntent);
-                    }
-                    else if (noteReceivedInt>100||noteReceivedInt<10){
-                        Toast toast = Toast.makeText(getApplicationContext(), "Cannot Accept Notes Less that ₹ 10/- or greater than ₹ 100/-", Toast.LENGTH_SHORT);
-                        ViewGroup group = (ViewGroup) toast.getView();
-                        TextView messageTextView = (TextView) group.getChildAt(0);
-                        messageTextView.setTextSize(32);
-                        toast.show();
-                        fileBTN=true;
-                    }
-                }
-
-                else
-                {
-                    Toast toast = Toast.makeText(getApplicationContext(), "You haven't entered any money!", Toast.LENGTH_SHORT);
-                    ViewGroup group = (ViewGroup) toast.getView();
-                    TextView messageTextView = (TextView) group.getChildAt(0);
-                    messageTextView.setTextSize(32);
-                    toast.show();
-                    fileBTN=true;
-                }
-            }
-        }
-    }
-    //---------------------------------------------------------------------
-    public String inputReception() {
-        readBufferPosition = 0;
-        readBuffer = new byte[1024];
-        String inputData = null;
-        try {
-            int bytesAvailable = mmInputStream.available();
-            if (bytesAvailable > 0) {
-                int mBytes;
-                byte[] packetBytes = null;
-                packetBytes = new byte[bytesAvailable];
-                mBytes = mmInputStream.read(packetBytes, 0, bytesAvailable);
-                Log.v("inputReception", "mBytes Value: " + mBytes);
-                for (int pstn = 0; pstn < mBytes; pstn++) {
-                    readBuffer[readBufferPosition] = packetBytes[pstn];
-                    readBufferPosition++;
-                }
-            }
-            inputData = new String(readBuffer, 0, bytesAvailable);
-            Log.v("Reception", "The string is:" + inputData);
-            readBufferPosition = 0;
-            return inputData;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-    //----------------------------------------------------------------------
-    public void receiverInput(){
-        final Handler handler = new Handler();
-
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                receiver=new inputReceiver();
-                try {
-                    mmInputStream=btSocket.getInputStream();
-                    receiver.execute();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, 3000);
-    }
-    //----------------------------------------------------------------------
-    public void confsim(String string){
-        flag++;
-        sender(string);
-        receiverInput();
-    }
-    //-------------------------------------------------------------------------
-    public void receiveIt(){
-        //receive the amount entered into the note validator and toast it!
-*//*
-        notesEntered++;
-*//*
-        flag=0;
-        flag++;
-        sender("Money Entered");
-        receiverInput();
-        if (flag==1)
-        {
-            confsim("Money Entered");
-        }
-    }
-    //-----------------------------------------------------------------------------
-    public void okClicked(View view){
-        autoClick=true;
-        if (fileBTN){
-            fileBTN=false;
-            if (flag3)
-            {
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        receiveIt();
-                    }
-                },1500);
-            }
-            else if (!flag3){
-*//*
-                notesEntered=1;
-*//*
-                moneyDeal.maxQuantity();
-                Intro.transNumb++;
-                Calendar calendar = Calendar.getInstance();
-                SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
-                String date = simpleDateFormat.format(calendar.getTime());
-                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
-                Log.v("Transaction",data);
-                //fileWrite();
-                //-----------
-                Properties props = new Properties();
-                props.put("mail.smtp.host", "smtp.gmail.com");
-                props.put("mail.smtp.socketFactory.port", "465");
-                props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.port", "465");
-                session = Session.getDefaultInstance(props, new Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("grietmsme@gmail.com", "grietmsm");
-                    }
-                });
-
-                pdialog = ProgressDialog.show(context, "", "Completing Transaction...", true);
-
-                RetreiveFeedTask task = new RetreiveFeedTask();
-                task.execute();
-                //-----------
-            }
-        }
-        else{
-            Toast toast = Toast.makeText(this, "Please Wait, Processing Cash", Toast.LENGTH_SHORT);
-            ViewGroup group = (ViewGroup) toast.getView();
-            TextView messageTextView = (TextView) group.getChildAt(0);
-            messageTextView.setTextSize(32);
-            toast.show();
-        }
-    }
-    //--------------------------------------------------------------
-    public void okClicSim(){
-        if (fileBTN){
-            fileBTN=false;
-            if (flag3)
-            {
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        receiveIt();
-                    }
-                },1500);
-            }
-            else if (!flag3){
-*//*
-                notesEntered=1;
-*//*
-                moneyDeal.maxQuantity();
-                Intro.transNumb++;
-                Calendar calendar = Calendar.getInstance();
-                SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
-                String date = simpleDateFormat.format(calendar.getTime());
-//              data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
-
-                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
-                Log.v("Transaction",data);
-                //fileWrite();
-                //-----------
-                Properties props = new Properties();
-                props.put("mail.smtp.host", "smtp.gmail.com");
-                props.put("mail.smtp.socketFactory.port", "465");
-                props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.port", "465");
-                session = Session.getDefaultInstance(props, new Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("grietmsme@gmail.com", "grietmsm");
-                    }
-                });
-
-                pdialog = ProgressDialog.show(context, "", "Completing Transaction...", true);
-
-                RetreiveFeedTask task = new RetreiveFeedTask();
-                task.execute();
-                //-----------
-            }
-        }
-        else {
-            Toast toast = Toast.makeText(this, "Please Wait, Processing Cash", Toast.LENGTH_SHORT);
-            ViewGroup group = (ViewGroup) toast.getView();
-            TextView messageTextView = (TextView) group.getChildAt(0);
-            messageTextView.setTextSize(0);
-        }
-    }
-//---------------------------------------------------------------------------------
-    public void fileWrite(){
-        //--------------files part starts
-        String filename1 = "transaction.txt";
-        try {
-            FileOutputStream fOs = openFileOutput(filename1,MODE_PRIVATE);
-            fOs.write(data.getBytes());
-            fOs.close();
-            Log.v("FILE","File has been written");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //----------------files part ends
-    }
-//---------------------------------------------------------------------------------
-    public void fileRead(){
-        String filename = "transaction.txt";
-        try {
-            FileInputStream fIs = openFileInput(filename);
-            InputStreamReader iSr = new InputStreamReader(fIs);
-            BufferedReader bFr = new BufferedReader(iSr);
-
-            String sLine = null;
-            String out="";
-            while ((sLine=bFr.readLine())!=null){
-                out+=sLine;
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-    //---------------------------------------------
-
-    class RetreiveFeedTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            try{
-                Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress("testfrom354@gmail.com"));
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("indooriaditya@gmail.com"));
-                message.setSubject("Testing");
-                message.setContent(data, "text/html; charset=utf-8");
-                Transport.send(message);
-            } catch(MessagingException e) {
-                e.printStackTrace();
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            pdialog.dismiss();
-
-            Toast toast = Toast.makeText(getApplicationContext(), "Transaction Complete", Toast.LENGTH_SHORT);
-            ViewGroup group = (ViewGroup) toast.getView();
-            TextView messageTextView = (TextView) group.getChildAt(0);
-            messageTextView.setTextSize(32);
-            toast.show();
-            Intent intent=new Intent(lastActivity.this,dummyIntro.class);
-            startActivity(intent);
-        }
-    }
-
-    //Steps in Arduino:
-    //1)If the received string is "Money EnteredMoney Entered" then:
-        //1a)Turn on the vending machine and take an input and return the corresponding output
-    //*/
 }
 
