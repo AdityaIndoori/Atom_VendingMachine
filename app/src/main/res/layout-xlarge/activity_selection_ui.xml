@@ -161,7 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/padsImg"
-                android:text="Sanitary Napkins"
+                android:text="Whisper Ultra XXL 360mm"
                 android:textSize="28dp"
                 android:gravity="center"
                 android:textStyle="bold"

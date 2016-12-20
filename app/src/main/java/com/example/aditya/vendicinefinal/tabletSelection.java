@@ -63,9 +63,9 @@ public class tabletSelection extends AppCompatActivity {
 
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="08";
+            Myear="16";
+            Edate="01";Emonth="01";Eyear="20";
             String details="This is the 2nd Tablet Details";
             TextView tabNameView= (TextView)findViewById(R.id.tablet2_name);
             String tablet_name = tabNameView.getText().toString();
@@ -91,9 +91,9 @@ public class tabletSelection extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="08";
+            Myear="16";
+            Edate="01";Emonth="07";Eyear="20";
             String details="This is the 3rd Tablet Details";
             TextView tabNameView= (TextView)findViewById(R.id.tablet3_name);
             String tablet_name = tabNameView.getText().toString();
@@ -119,9 +119,9 @@ public class tabletSelection extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="09";
+            Myear="16";
+            Edate="01";Emonth="03";Eyear="18";
             String details = "This is the 4th Tablet Details";
             TextView tabNameView = (TextView) findViewById(R.id.tablet4_name);
             String tablet_name = tabNameView.getText().toString();
@@ -147,9 +147,9 @@ public class tabletSelection extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="04";
+            Myear="16";
+            Edate="01";Emonth="09";Eyear="17";
             String details = "This is the 5th Tablet Details";
             TextView tabNameView = (TextView) findViewById(R.id.tablet5_name);
             String tablet_name = tabNameView.getText().toString();
@@ -175,9 +175,9 @@ public class tabletSelection extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="03";
+            Myear="16";
+            Edate="01";Emonth="05";Eyear="19";
             String details = "This is the 6th Tablet Details";
             TextView tabNameView = (TextView) findViewById(R.id.tablet6_name);
             String tablet_name = tabNameView.getText().toString();
@@ -215,9 +215,9 @@ public class tabletSelection extends AppCompatActivity {
             intent.putExtra("TabletPrice", substr);
             intent.putExtra("TabletDetails", details);
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="07";
+            Myear="16";
+            Edate="01";Emonth="07";Eyear="19";
             intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
             intent.putExtra("exp",Edate+"/"+Emonth+"/"+Eyear);
             startActivity(intent);

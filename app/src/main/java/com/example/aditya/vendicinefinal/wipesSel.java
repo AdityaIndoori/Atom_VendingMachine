@@ -41,10 +41,10 @@ public class wipesSel extends AppCompatActivity {
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
-            Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mdate="25";
+            Mmonth="10";
+            Myear="16";
+            Edate="25";Emonth="04";Eyear="17";
             intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
             intent.putExtra("exp",Edate+"/"+Emonth+"/"+Eyear);
             startActivity(intent);
@@ -186,8 +186,6 @@ public class wipesSel extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-
 
     public void exitActiv(View view){
         finish();

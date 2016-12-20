@@ -142,8 +142,8 @@ public class SelectionUI extends AppCompatActivity {
         else {
             Mdate="01";
             Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Myear="16";
+            Edate="02";Emonth="02";Eyear="19";
             Intent intent=new Intent(this,otherSelection.class);
             intent.putExtra("ItemName","Hand Sanitizer");
             intent.putExtra("ItemPrice","80");
@@ -161,9 +161,9 @@ public class SelectionUI extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="07";
+            Myear="16";
+            Edate="01";Emonth="10";Eyear="18";
             Intent intent=new Intent(this,otherSelection.class);
             intent.putExtra("ItemName","Condoms Packets");
             intent.putExtra("ItemPrice","40");
@@ -182,9 +182,9 @@ public class SelectionUI extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="08";
+            Myear="16";
+            Edate="01";Emonth="01";Eyear="17";
             Intent intent=new Intent(this,otherSelection.class);
             intent.putExtra("ItemName","Sanitary Napkins");
             intent.putExtra("ItemPrice","100");
@@ -202,9 +202,9 @@ public class SelectionUI extends AppCompatActivity {
         }
         else {
             Mdate="01";
-            Mmonth="01";
-            Myear="01";
-            Edate="02";Emonth="02";Eyear="02";
+            Mmonth="06";
+            Myear="16";
+            Edate="01";Emonth="06";Eyear="18";
             Intent intent=new Intent(this,otherSelection.class);
             intent.putExtra("ItemName","Wet Wipes");
             intent.putExtra("ItemPrice","80");

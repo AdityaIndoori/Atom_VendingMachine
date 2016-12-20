@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,59 +18,88 @@ import java.util.UUID;
 
 public class Intro extends AppCompatActivity {
     String address = null;
+    String string = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     public static BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     Button coinreset;
+    public static boolean quantflag = true;
     public static BluetoothDevice dispositivo;
     public static double transNumb=0;
     public static boolean fileFlag;
-    public static int coins=150;
+    public static int coins=150,totalnotes=0;
     public static int okacetQuant,bisleri,wild,zago,aloe,pulpy,sanzQuant,wipesQuant,metrogylQuant,eldoperQuant,doloQuant,gelusil,meftalQuant,nutriaQuant,nutribQuant,condomQuant,whisperQuant,waterQuant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        myBluetooth=BluetoothAdapter.getDefaultAdapter();
+
+        Bundle extras = getIntent().getExtras();
+        if (extras!=null){
+            string = extras.getString("Bluetooth","Off");
+            Log.v("Intent_Intro","The string via intent is: "+string);
+            if (string.equals("On")){
+                if (myBluetooth.isEnabled()){
+                    myBluetooth.disable();
+                }
+            }
+        }
+
         coinreset=(Button)findViewById(R.id.coinRst);
         coinreset.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 coins=150;
-                okacetQuant=23;
-                metrogylQuant=23;
-                eldoperQuant=23;
-                doloQuant=23;
-                gelusil=23;
-                meftalQuant=23;
-                nutriaQuant=18;
-                sanzQuant=18;
-                nutribQuant=18;
-                condomQuant=21;
-                whisperQuant=6;
-                bisleri=12;wild=6;zago=6;aloe=6;pulpy=6;
-                wipesQuant=6;
-                waterQuant=6;
+                totalnotes=0;
+                okacetQuant = 17;
+                metrogylQuant = 18;
+                eldoperQuant = 17;
+                doloQuant = 17;
+                gelusil = 17;
+                meftalQuant = 18;
+                nutriaQuant = 17;//Merry Berry nutria
+                nutribQuant = 32;//Choco Delite nutrib
+                sanzQuant = 14;
+                condomQuant = 13;
+                //clr72=14;
+                whisperQuant = 11;//5+6
+                wipesQuant = 12;
+                bisleri = 10;
+                wild = 5;
+                zago = 5;
+                aloe = 5;
+                pulpy = 5;
+                if (myBluetooth.isEnabled()){
+                    myBluetooth.disable();
+                }
                 Toast.makeText(Intro.this, "All the items are default values and Coins have been RESET to: "+coins, Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
-        okacetQuant=2;
-        metrogylQuant=2;
-        eldoperQuant=2;
-        doloQuant=2;
-        gelusil=2;
-        meftalQuant=2;
-        nutriaQuant=2;
-        sanzQuant=2;
-        nutribQuant=2;
-        condomQuant=2;
-        whisperQuant=2;
-        bisleri=2;wild=2;zago=2;aloe=2;pulpy=2;
-        wipesQuant=2;
-        waterQuant=2;
+        if (quantflag==true) {
+            okacetQuant = 17;
+            metrogylQuant = 18;
+            eldoperQuant = 17;
+            doloQuant = 17;
+            gelusil = 17;
+            meftalQuant = 18;
+            nutriaQuant = 17;//Merry Berry nutria
+            nutribQuant = 32;//Choco Delite nutrib
+            sanzQuant = 14;
+            condomQuant = 13;
+            //clr72=14;
+            whisperQuant = 11;//5+6
+            wipesQuant = 12;
+            bisleri = 10;
+            wild = 5;
+            zago = 5;
+            aloe = 5;
+            pulpy = 5;
+        }
         fileFlag=true;
         Intent newint = getIntent();
         address = newint.getStringExtra(DeviceList.EXTRA_ADDRESS);

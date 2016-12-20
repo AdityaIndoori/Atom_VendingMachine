@@ -58,6 +58,9 @@ public class otherSelection extends AppCompatActivity {
         Exp=extras.getString("exp");
         Log.v("name",itemName);
         Log.v("price",itemPrice);
+        if (itemName.equals("Sanitary Napkins"))
+        otherName.setText("Whisper Ultra XXL 360mm");
+        else
         otherName.setText(itemName);
         otherPrice.setText("₹ "+itemPrice+".00");
         otherMfg.setText(Mfg);
@@ -126,7 +129,7 @@ public class otherSelection extends AppCompatActivity {
         }
         else if ("Water Bottle".equals(string)){
             otherImage.setImageResource(R.drawable.bottle);
-            selecteditmQuantity = Intro.waterQuant;
+            selecteditmQuantity = Intro.bisleri;
         }
     }
 

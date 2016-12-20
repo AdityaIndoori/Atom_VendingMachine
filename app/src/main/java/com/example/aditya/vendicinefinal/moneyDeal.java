@@ -77,8 +77,12 @@ public class moneyDeal extends AppCompatActivity {
 
 
         iv1=(ImageView)findViewById(R.id.iconView);
+
         tv1=(TextView)findViewById(R.id.productIDName);
         tv2=(TextView)findViewById(R.id.productPrice2);
+        if (namestr.equals("Sanitary Napkins"))
+            tv1.setText(" Whisper Ultra XXL 360mm\n");
+        else
         tv1.setText(" "+namestr +"\n");
         if(roundedPrice>50)
         tv2.setText("Price : ₹"+totalPrice+".00"+"\nPlease Enter :  ₹ "+roundedPrice + ".00\nand Tap OK");
@@ -176,14 +180,22 @@ public class moneyDeal extends AppCompatActivity {
                     outputPrice = Integer.parseInt(output);
                     Log.v("Note Entered", "The entered note is: " + outputPrice);
                     if (outputPrice >= 10 && outputPrice <= 100) {
-                        if (outputPrice==10)
+                        if (outputPrice==10){
                             ten++;
-                        if (outputPrice==20)
+                            Intro.totalnotes++;
+                        }
+                        if (outputPrice==20) {
                             twenty++;
-                        if (outputPrice==50)
+                            Intro.totalnotes++;
+                        }
+                        if (outputPrice==50){
                             fifty++;
-                        if (outputPrice==100)
+                            Intro.totalnotes++;
+                        }
+                        if (outputPrice==100){
                             hundred++;
+                            Intro.totalnotes++;
+                        }
                         Intent lastIntent = new Intent(getApplicationContext(), lastActivity.class);
                         lastIntent.putExtra("Balance", outputPrice - totalPrice);
                         startActivity(lastIntent);
