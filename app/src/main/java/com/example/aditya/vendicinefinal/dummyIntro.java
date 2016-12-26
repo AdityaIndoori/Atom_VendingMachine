@@ -28,7 +28,6 @@ public class dummyIntro extends AppCompatActivity {
             startActivity(intent);
         }
         else{
-           // Toast.makeText(this, "Machine cannot provide Change, Its under Maintenance", Toast.LENGTH_SHORT).show();
             Intent popIntent = new Intent(this,PopupActivity.class);
             popIntent.putExtra("String","Machine under Servicing");
             startActivity(popIntent);

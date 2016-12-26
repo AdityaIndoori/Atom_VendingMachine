@@ -23,7 +23,7 @@ public class moneyDeal extends AppCompatActivity {
     public static int quantityint;
     TextView tv1,tv2;
     ImageView iv1;
-    static int totalPrice;
+    static int totalPrice,insertedNote;
     public static int ten,twenty,fifty,hundred;
     //----------
     BluetoothSocket btSocket = null;
@@ -49,6 +49,7 @@ public class moneyDeal extends AppCompatActivity {
         hundred=0;
         //---------------
         btSocket=Intro.btSocket;
+
         try {
             mmInputStream = btSocket.getInputStream();
         } catch (IOException e) {
@@ -183,20 +184,25 @@ public class moneyDeal extends AppCompatActivity {
                         if (outputPrice==10){
                             ten++;
                             Intro.totalnotes++;
+                            insertedNote=10;
                         }
                         if (outputPrice==20) {
                             twenty++;
                             Intro.totalnotes++;
+                            insertedNote=20;
                         }
                         if (outputPrice==50){
                             fifty++;
                             Intro.totalnotes++;
+                            insertedNote=50;
                         }
                         if (outputPrice==100){
                             hundred++;
                             Intro.totalnotes++;
+                            insertedNote=100;
                         }
                         Intent lastIntent = new Intent(getApplicationContext(), lastActivity.class);
+                        lastIntent.putExtra("noteInserted",insertedNote);
                         lastIntent.putExtra("Balance", outputPrice - totalPrice);
                         startActivity(lastIntent);
                     } else if (outputPrice > 100||outputPrice<10) {

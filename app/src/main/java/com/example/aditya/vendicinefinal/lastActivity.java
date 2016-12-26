@@ -52,7 +52,7 @@ public class lastActivity extends AppCompatActivity {
     Session session = null;
     ProgressDialog pdialog = null;
     Context context = null;
-    public int changeRs;
+    public int changeRs,noteInserted;
     ImageView icon;
     Boolean autoClick;
     //------------------------
@@ -91,6 +91,7 @@ public class lastActivity extends AppCompatActivity {
         });
         Bundle extras = getIntent().getExtras();
         Balance = extras.getInt("Balance");
+        noteInserted=extras.getInt("noteInserted");
         if (Balance == 0) {
             icon.setImageResource(R.drawable.atom);
             Log.v("Balance","the Balance is 0");
@@ -108,25 +109,24 @@ public class lastActivity extends AppCompatActivity {
             },10000);
         }
         else if (Balance < 0) {            //means the user should insert more money
-
             Log.v("Balance","the User must Enter Money,Balance is: "+Balance);
             flag3=true;
             Balance = -Balance;
             Log.v("NewBalance",""+Balance);
             if (Balance <= 10) {
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 10 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 10 more\nAnd click OK");
             }
             else if (Balance > 10 && Balance <= 20) {
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 20 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 20 more\nAnd click OK");
             }
             else if (Balance > 20 && Balance <= 50) {
-                lastMsg.setText("Balance Amount to be Entered: ₹  "+Balance+"\n"+"Please enter  ₹ 50 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 50 more\nAnd click OK");
             }
             else if (Balance > 50 && Balance <= 100) {
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 100 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 100 more\nAnd click OK");
             }
-            else if (Balance>100){
-                lastMsg.setText("Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter ₹ 100 more\nAnd click OK");
+            else if (Balance>100) {
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter ₹ 100 more\nAnd click OK");
             }
         }
         else if (Balance > 0) {
@@ -139,7 +139,7 @@ public class lastActivity extends AppCompatActivity {
             changeRs=Balance;
             tnks.setTextSize(86);
             tnks.setText("ThankYou!");
-            lastMsg.setText("Please Collect your product and "+ "₹ "+Balance+".00 Rupees\n And Click OK to End Transaction\n" +
+            lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Please Collect your product and "+ "₹ "+Balance+".00 /-\n And Click OK to End Transaction\n" +
                     "Stay Healthy!" );
             Handler handler3 = new Handler();
             handler3.postDelayed(new Runnable() {
@@ -152,7 +152,6 @@ public class lastActivity extends AppCompatActivity {
             //
             //means coin dispenser should give them back some money i.e Balance amount of rupees
         }
-
     }
     //---------------------------------------------------------------------
     public void sender(final String i) {
@@ -197,16 +196,21 @@ public class lastActivity extends AppCompatActivity {
                     Log.v("onpostLA", "4) The output Integer is:" + noteReceivedInt);
                     Log.v("Note Entered","The entered note is: "+ noteReceivedInt);
                     if (noteReceivedInt>=10 && noteReceivedInt<=100){
-                        if (noteReceivedInt==10)
+                        if (noteReceivedInt==10){
                             moneyDeal.ten++;
-                        if (noteReceivedInt==20)
+                        }
+                        if (noteReceivedInt==20){
                             moneyDeal.twenty++;
-                        if (noteReceivedInt==50)
+                        }
+                        if (noteReceivedInt==50){
                             moneyDeal.fifty++;
-                        if (noteReceivedInt==100)
+                        }
+                        if (noteReceivedInt==100){
                             moneyDeal.hundred++;
+                        }
                         Intent lastIntent = new Intent(getApplicationContext(),lastActivity.class);
                         lastIntent.putExtra("Balance", noteReceivedInt-Balance);
+                        lastIntent.putExtra("noteInserted",noteReceivedInt);
                         startActivity(lastIntent);
                     }
                     else if (noteReceivedInt>100||noteReceivedInt<10){
