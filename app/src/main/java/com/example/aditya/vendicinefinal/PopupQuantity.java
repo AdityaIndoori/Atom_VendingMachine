@@ -1,6 +1,5 @@
 package com.example.aditya.vendicinefinal;
 
-import android.app.Dialog;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -232,9 +230,9 @@ public class PopupQuantity extends AppCompatActivity {
                 selectedItemQnt=Intro.wild;
                 break;
 
-            case "Zago Protein Drink\n(Chocolate)":
-                tabImgV.setImageResource(R.drawable.zago);
-                selectedItemQnt=Intro.zago;
+            case "Redbull":
+                tabImgV.setImageResource(R.drawable.redbull);
+                selectedItemQnt=Intro.redbull;
                 break;
 
             case "Aloevera Litchi Drink":

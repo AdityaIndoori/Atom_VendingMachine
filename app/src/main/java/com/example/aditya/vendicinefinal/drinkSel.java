@@ -7,14 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class wipesSel extends AppCompatActivity {
+public class drinkSel extends AppCompatActivity {
 
     String Mdate,Mmonth,Myear,Edate,Emonth,Eyear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wipes_sel);
+        setContentView(R.layout.activity_drink_sel);
     }
 
     public void bisleri(View view){
@@ -85,8 +85,8 @@ public class wipesSel extends AppCompatActivity {
         }
     }
 
-    public void zago(View view){
-        if (Intro.zago<1){
+    public void redbull(View view){
+        if (Intro.redbull <1){
             Intent popIntent = new Intent(this,PopupActivity.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
@@ -98,10 +98,10 @@ public class wipesSel extends AppCompatActivity {
             toast.show();*/
         }
         else {
-            String details="This is the Zago Protein Drink";
-            TextView tabNameView= (TextView)findViewById(R.id.zago_name);
+            String details="This is the redBull Drink";
+            TextView tabNameView= (TextView)findViewById(R.id.redbull_name);
             String tablet_name = tabNameView.getText().toString();
-            TextView tabPriceView = (TextView) findViewById(R.id.zago_price);
+            TextView tabPriceView = (TextView) findViewById(R.id.redbull_price);
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
@@ -132,7 +132,7 @@ public class wipesSel extends AppCompatActivity {
             toast.show();*/
         }
         else {
-            String details="This is the Wild Vitamin Drink";
+            String details="This is the Aloevera Drink";
             TextView tabNameView= (TextView)findViewById(R.id.aloe_name);
             String tablet_name = tabNameView.getText().toString();
             TextView tabPriceView = (TextView) findViewById(R.id.aloe_price);
@@ -166,7 +166,7 @@ public class wipesSel extends AppCompatActivity {
             toast.show();*/
         }
         else {
-            String details="This is the Wild Vitamin Drink";
+            String details="This is the pulpy orange Drink";
             TextView tabNameView= (TextView)findViewById(R.id.pulpy_name);
             String tablet_name = tabNameView.getText().toString();
             TextView tabPriceView = (TextView) findViewById(R.id.pulpy_price);

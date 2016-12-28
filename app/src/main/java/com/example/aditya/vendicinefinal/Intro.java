@@ -30,7 +30,7 @@ public class Intro extends AppCompatActivity {
     public static double transNumb=0;
     public static boolean fileFlag;
     public static int coins=150,totalnotes=0;
-    public static int okacetQuant,bisleri,wild,zago,aloe,pulpy,sanzQuant,wipesQuant,metrogylQuant,eldoperQuant,doloQuant,gelusil,meftalQuant,nutriaQuant,nutribQuant,condomQuant,whisperQuant,waterQuant;
+    public static int okacetQuant,bisleri,wild, redbull,aloe,pulpy,sanzQuant,wipesQuant,metrogylQuant,eldoperQuant,doloQuant,gelusil,meftalQuant,nutriaQuant,nutribQuant,condomQuant,whisperQuant,waterQuant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class Intro extends AppCompatActivity {
                 wipesQuant = 12;
                 bisleri = 10;
                 wild = 5;
-                zago = 5;
+                redbull = 5;
                 aloe = 5;
                 pulpy = 5;
                 if (myBluetooth.isEnabled()){
@@ -96,7 +96,7 @@ public class Intro extends AppCompatActivity {
             wipesQuant = 12;
             bisleri = 10;
             wild = 5;
-            zago = 5;
+            redbull = 5;
             aloe = 5;
             pulpy = 5;
         }

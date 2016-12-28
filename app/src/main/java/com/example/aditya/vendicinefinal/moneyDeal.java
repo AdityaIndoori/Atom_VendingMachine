@@ -2,7 +2,6 @@ package com.example.aditya.vendicinefinal;
 
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.PublicKey;
 
 public class moneyDeal extends AppCompatActivity {
     public static String namestr,pricestr;
@@ -304,8 +302,8 @@ public class moneyDeal extends AppCompatActivity {
                 case "Wild Vitamin Drink\n(Dragon Fruit)":
                     iv1.setImageResource(R.drawable.wild);
                     break;
-                case "Zago Protein Drink\n(Chocolate)":
-                    iv1.setImageResource(R.drawable.zago);
+                case "Redbull":
+                    iv1.setImageResource(R.drawable.redbull);
                     break;
                 case "Aloevera Litchi Drink":
                     iv1.setImageResource(R.drawable.aloe);
@@ -365,7 +363,7 @@ public class moneyDeal extends AppCompatActivity {
                     Intro.wild=Intro.wild-quantityint;
                     break;
                 case "Zago Protein Drink\n(Chocolate)":
-                    Intro.zago=Intro.zago-quantityint;
+                    Intro.redbull =Intro.redbull -quantityint;
                     break;
                 case "Aloevera Litchi Drink":
                     Intro.aloe=Intro.aloe-quantityint;

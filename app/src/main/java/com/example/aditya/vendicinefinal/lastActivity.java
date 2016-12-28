@@ -4,28 +4,19 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Properties;
@@ -40,7 +31,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import static com.example.aditya.vendicinefinal.Intro.btSocket;
-import static com.example.aditya.vendicinefinal.Intro.transNumb;
 
 public class lastActivity extends AppCompatActivity {
 
@@ -320,7 +310,7 @@ public class lastActivity extends AppCompatActivity {
                 Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
                 String date = simpleDateFormat.format(calendar.getTime());
-                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
+                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.redbull +"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
                 Log.v("Transaction",data);
                 //-----------
                 Properties props = new Properties();
@@ -370,7 +360,7 @@ public class lastActivity extends AppCompatActivity {
                 Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
                 String date = simpleDateFormat.format(calendar.getTime());
-                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.zago+"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
+                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.redbull +"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
                 Log.v("Transaction",data);
                 //-----------
                 Properties props = new Properties();

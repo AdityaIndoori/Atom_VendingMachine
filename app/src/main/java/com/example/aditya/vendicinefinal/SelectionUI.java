@@ -1,7 +1,6 @@
 package com.example.aditya.vendicinefinal;
 
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -9,18 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class SelectionUI extends AppCompatActivity {
 
@@ -195,7 +186,7 @@ public class SelectionUI extends AppCompatActivity {
     }
 
     public void wipesClick(View view){
-        if (Intro.condomQuant<1){
+        if (Intro.wipesQuant<1){
             Intent popIntent = new Intent(this,PopupActivity.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
@@ -215,7 +206,7 @@ public class SelectionUI extends AppCompatActivity {
     }
 
     public void drinkClick(View view){
-        Intent intent=new Intent(this,wipesSel.class);
+        Intent intent=new Intent(this,drinkSel.class);
         startActivity(intent);
     }
 

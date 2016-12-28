@@ -37,7 +37,7 @@
             android:name=".PopupActivity"
             android:theme="@style/NoTitleDialog" />
         <activity android:name=".nutriSel" />
-        <activity android:name=".wipesSel"></activity>
+        <activity android:name=".drinkSel"></activity>
     </application>
 
 </manifest>
