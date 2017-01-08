@@ -4,7 +4,7 @@
     android:id="@+id/activity_dummy_intro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aditya.vendicinefinal.dummyIntro">
+    tools:context="com.example.aditya.vendicinefinal.cUserInitialScreen">
 
 
     <ImageView

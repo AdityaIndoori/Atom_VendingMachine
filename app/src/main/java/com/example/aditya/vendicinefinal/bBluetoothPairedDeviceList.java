@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class DeviceList extends AppCompatActivity {
+public class bBluetoothPairedDeviceList extends AppCompatActivity {
     //widgets
     Button btnPaired;
     ListView devicelist;
@@ -95,7 +95,7 @@ public class DeviceList extends AppCompatActivity {
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
             // Make an intent to start next activity.
-            Intent i = new Intent(DeviceList.this, Intro.class);
+            Intent i = new Intent(bBluetoothPairedDeviceList.this, aInitialScreen.class);
             i.putExtra(START_FLAG,true);
             //Change the activity.
             i.putExtra(EXTRA_ADDRESS, address);//this will be received at ledControl (class) Activity

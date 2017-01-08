@@ -4,7 +4,7 @@
     android:id="@+id/activity_last"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aditya.vendicinefinal.lastActivity">
+    tools:context="com.example.aditya.vendicinefinal.lNextTimeMoney">
 
     <ImageView
         android:layout_width="match_parent"

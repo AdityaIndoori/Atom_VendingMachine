@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class PopupQuantity extends AppCompatActivity {
+public class hPopupEFG extends AppCompatActivity {
     TextView quantIndicator,otherMfg,otherExp;;
     public int quantity;
     BluetoothSocket btSocket = null;
@@ -57,7 +57,7 @@ public class PopupQuantity extends AppCompatActivity {
         quantIndicator.setText(""+quantity);
         otherMfg.setText(Mfg);
         otherExp.setText(Exp);
-        btSocket=Intro.btSocket;
+        btSocket= aInitialScreen.btSocket;
         try {
             mmInputStream = btSocket.getInputStream();
         } catch (IOException e) {
@@ -88,7 +88,7 @@ public class PopupQuantity extends AppCompatActivity {
             public void run() {
                 try {
                     btSocket.getOutputStream().write(i.getBytes());
-                    Intent intent= new Intent(PopupQuantity.this,moneyDeal.class);
+                    Intent intent= new Intent(hPopupEFG.this,kFirstTimeMoney.class);
                     intent.putExtra("Name",name);
                     intent.putExtra("Quantity",quantity);
                     intent.putExtra("Price",priceStr);
@@ -117,7 +117,7 @@ public class PopupQuantity extends AppCompatActivity {
             {
                 flag++;
                 output=""+str1;
-                Toast.makeText(PopupQuantity.this, output, Toast.LENGTH_SHORT).show();
+                Toast.makeText(hPopupEFG.this, output, Toast.LENGTH_SHORT).show();
                 Log.v("onpost","2) The output is:" + output);
             }
             if (flag==3)
@@ -186,23 +186,23 @@ public class PopupQuantity extends AppCompatActivity {
         switch (name){
             case "OKACET COLD":
                 tabImgV.setImageResource(R.drawable.okacetcold);
-                selectedItemQnt = Intro.okacetQuant;
+                selectedItemQnt = aInitialScreen.okacetQuant;
                 break;
             case "METROGYL - 400":
                 tabImgV.setImageResource(R.drawable.metrogyl);
-                selectedItemQnt = Intro.metrogylQuant;
+                selectedItemQnt = aInitialScreen.metrogylQuant;
                 break;
             case "ELDOPER":
                 tabImgV.setImageResource(R.drawable.eldoper);
-                selectedItemQnt = Intro.eldoperQuant;
+                selectedItemQnt = aInitialScreen.eldoperQuant;
                 break;
             case "DOLO - 650":
                 tabImgV.setImageResource(R.drawable.dolo650);
-                selectedItemQnt = Intro.doloQuant;
+                selectedItemQnt = aInitialScreen.doloQuant;
                 break;
             case "GELUSIL":
                 tabImgV.setImageResource(R.drawable.gelusil);
-                selectedItemQnt = Intro.gelusil;
+                selectedItemQnt = aInitialScreen.gelusil;
                 break;
             case "PARACIP - 500":
                 tabImgV.setImageResource(R.drawable.paracip500);
@@ -210,39 +210,39 @@ public class PopupQuantity extends AppCompatActivity {
                 break;
             case "MEFTAL SPAS":
                 tabImgV.setImageResource(R.drawable.meftalspas);
-                selectedItemQnt = Intro.meftalQuant;
+                selectedItemQnt = aInitialScreen.meftalQuant;
                 break;
             case "RiteBite\nNutri Bar\n(Merry Berry)":
                 tabImgV.setImageResource(R.drawable.nutria);
-                selectedItemQnt = Intro.nutriaQuant;
+                selectedItemQnt = aInitialScreen.nutriaQuant;
                 break;
             case "RiteBite\nNutri bar\n(Choco Delite)":
                 tabImgV.setImageResource(R.drawable.nutrib);
-                selectedItemQnt = Intro.nutribQuant;
+                selectedItemQnt = aInitialScreen.nutribQuant;
                 break;
             case "Water Bottle":
                 tabImgV.setImageResource(R.drawable.bottle);
-                selectedItemQnt=Intro.bisleri;
+                selectedItemQnt= aInitialScreen.bisleri;
                 break;
 
             case "Wild Vitamin Drink\n(Dragon Fruit)":
                 tabImgV.setImageResource(R.drawable.wild);
-                selectedItemQnt=Intro.wild;
+                selectedItemQnt= aInitialScreen.wild;
                 break;
 
             case "Redbull":
                 tabImgV.setImageResource(R.drawable.redbull);
-                selectedItemQnt=Intro.redbull;
+                selectedItemQnt= aInitialScreen.redbull;
                 break;
 
             case "Aloevera Litchi Drink":
                 tabImgV.setImageResource(R.drawable.aloe);
-                selectedItemQnt=Intro.aloe;
+                selectedItemQnt= aInitialScreen.aloe;
                 break;
 
             case "Minute Maid Pulpy Orange":
                 tabImgV.setImageResource(R.drawable.pulpy);
-                selectedItemQnt=Intro.pulpy;
+                selectedItemQnt= aInitialScreen.pulpy;
                 break;
 
             default:

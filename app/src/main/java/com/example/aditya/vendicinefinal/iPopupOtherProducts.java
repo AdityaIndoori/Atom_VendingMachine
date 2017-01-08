@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class otherSelection extends AppCompatActivity {
+public class iPopupOtherProducts extends AppCompatActivity {
     TextView otherName;
     TextView otherPrice;
     TextView otherQuantity,otherMfg,otherExp;
@@ -67,7 +67,7 @@ public class otherSelection extends AppCompatActivity {
         iconSet(itemName);
         quant=1;
         otherQuantity.setText(""+quant);
-        btSocket=Intro.btSocket;
+        btSocket= aInitialScreen.btSocket;
 
     }
 
@@ -97,7 +97,7 @@ public class otherSelection extends AppCompatActivity {
             public void run() {
                 try {
                     btSocket.getOutputStream().write(i.getBytes());
-                    Intent intent= new Intent(otherSelection.this,moneyDeal.class);
+                    Intent intent= new Intent(iPopupOtherProducts.this,kFirstTimeMoney.class);
                     intent.putExtra("Name",itemName);
                     intent.putExtra("Quantity",quant);
                     intent.putExtra("Price",itemPrice);
@@ -112,23 +112,23 @@ public class otherSelection extends AppCompatActivity {
     public void iconSet(String string){
         if ("Condoms Packets".equals(string)){
             otherImage.setImageResource(R.drawable.condimg);
-            selecteditmQuantity = Intro.condomQuant;
+            selecteditmQuantity = aInitialScreen.condomQuant;
         }
         else if("Hand Sanitizer".equals(string)){
             otherImage.setImageResource(R.drawable.detsanz);
-            selecteditmQuantity = Intro.sanzQuant;
+            selecteditmQuantity = aInitialScreen.sanzQuant;
         }
         else if ("Sanitary Napkins".equals(string)){
             otherImage.setImageResource(R.drawable.whisper);
-            selecteditmQuantity = Intro.whisperQuant;
+            selecteditmQuantity = aInitialScreen.whisperQuant;
         }
         else if("Wet Wipes".equals(string)){
             otherImage.setImageResource(R.drawable.wetwipes);
-            selecteditmQuantity = Intro.wipesQuant;
+            selecteditmQuantity = aInitialScreen.wipesQuant;
         }
         else if ("Water Bottle".equals(string)){
             otherImage.setImageResource(R.drawable.bottle);
-            selecteditmQuantity = Intro.bisleri;
+            selecteditmQuantity = aInitialScreen.bisleri;
         }
     }
 
@@ -149,7 +149,7 @@ public class otherSelection extends AppCompatActivity {
             {
                 flag++;
                 output=""+str1;
-                Toast.makeText(otherSelection.this, output, Toast.LENGTH_SHORT).show();
+                Toast.makeText(iPopupOtherProducts.this, output, Toast.LENGTH_SHORT).show();
                 Log.v("onpost","2) The output is:" + output);
             }
             if (flag==3)

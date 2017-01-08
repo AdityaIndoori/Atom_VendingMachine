@@ -30,9 +30,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import static com.example.aditya.vendicinefinal.Intro.btSocket;
+import static com.example.aditya.vendicinefinal.aInitialScreen.btSocket;
 
-public class lastActivity extends AppCompatActivity {
+public class lNextTimeMoney extends AppCompatActivity {
 
     Button btlostbtn;
     int Balance;//The balance to be entered into the machine by consumer: Balance = moneyEntered - totalMoneyPurchase (Yea -ve value...check out the rest of the code for a better understanding!)
@@ -74,7 +74,7 @@ public class lastActivity extends AppCompatActivity {
         btlostbtn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),Intro.class);
+                Intent intent=new Intent(getApplicationContext(),aInitialScreen.class);
                 startActivity(intent);
                 return false;
             }
@@ -85,7 +85,7 @@ public class lastActivity extends AppCompatActivity {
         if (Balance == 0) {
             icon.setImageResource(R.drawable.atom);
             Log.v("Balance","the Balance is 0");
-            Log.v("FileFlag","The value of FileFlag is: "+Intro.fileFlag);
+            Log.v("FileFlag","The value of FileFlag is: "+ aInitialScreen.fileFlag);
             flag3=false;//Thank You!
             tnks.setTextSize(86);
             tnks.setText("ThankYou!");
@@ -121,9 +121,9 @@ public class lastActivity extends AppCompatActivity {
         }
         else if (Balance > 0) {
             icon.setImageResource(R.drawable.atom);
-            Intro.coins=Intro.coins-(Balance/10);
+            aInitialScreen.coins= aInitialScreen.coins-(Balance/10);
             Log.v("Balance","the User must get Change,Balance is: "+Balance);
-            Log.v("CoinsLA","The number of coins remaining are: "+Intro.coins);
+            Log.v("CoinsLA","The number of coins remaining are: "+ aInitialScreen.coins);
             flag3=false;
             sender("CoinDispenser "+Balance);
             changeRs=Balance;
@@ -187,18 +187,18 @@ public class lastActivity extends AppCompatActivity {
                     Log.v("Note Entered","The entered note is: "+ noteReceivedInt);
                     if (noteReceivedInt>=10 && noteReceivedInt<=100){
                         if (noteReceivedInt==10){
-                            moneyDeal.ten++;
+                            kFirstTimeMoney.ten++;
                         }
                         if (noteReceivedInt==20){
-                            moneyDeal.twenty++;
+                            kFirstTimeMoney.twenty++;
                         }
                         if (noteReceivedInt==50){
-                            moneyDeal.fifty++;
+                            kFirstTimeMoney.fifty++;
                         }
                         if (noteReceivedInt==100){
-                            moneyDeal.hundred++;
+                            kFirstTimeMoney.hundred++;
                         }
-                        Intent lastIntent = new Intent(getApplicationContext(),lastActivity.class);
+                        Intent lastIntent = new Intent(getApplicationContext(),lNextTimeMoney.class);
                         lastIntent.putExtra("Balance", noteReceivedInt-Balance);
                         lastIntent.putExtra("noteInserted",noteReceivedInt);
                         startActivity(lastIntent);
@@ -305,12 +305,12 @@ public class lastActivity extends AppCompatActivity {
                 },1500);
             }
             else if (!flag3){
-                moneyDeal.maxQuantity();
-                Intro.transNumb++;
+                kFirstTimeMoney.maxQuantity();
+                aInitialScreen.transNumb++;
                 Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
                 String date = simpleDateFormat.format(calendar.getTime());
-                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.redbull +"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
+                data=data+"<br />"+"|"+date+"|"+"|"+ kFirstTimeMoney.namestr +"|"+"|"+ kFirstTimeMoney.quantityint+"|"+"|"+ kFirstTimeMoney.pricestr+"|"+"|"+ kFirstTimeMoney.ten+"|"+"|"+ kFirstTimeMoney.twenty+"|"+"|"+ kFirstTimeMoney.fifty+"|"+"|"+ kFirstTimeMoney.hundred+"|"+"|"+changeRs+"|"+"|"+ aInitialScreen.coins+"|"+"|"+ aInitialScreen.okacetQuant+"|"+"|"+ aInitialScreen.metrogylQuant+"|"+"|"+ aInitialScreen.eldoperQuant+"|"+"|"+ aInitialScreen.doloQuant+"|"+"|"+ aInitialScreen.gelusil+"|"+"|"+ aInitialScreen.meftalQuant+"|"+ aInitialScreen.nutriaQuant+"|"+"|"+ aInitialScreen.nutribQuant+"|"+"|"+ aInitialScreen.sanzQuant+"|"+"|"+ aInitialScreen.condomQuant+"|"+"|"+ aInitialScreen.whisperQuant+"|"+"|"+ aInitialScreen.wipesQuant+"|"+"|"+ aInitialScreen.bisleri+"|"+"|"+ aInitialScreen.wild+"|"+"|"+ aInitialScreen.redbull +"|"+"|"+ aInitialScreen.aloe+"|"+"|"+ aInitialScreen.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
                 Log.v("Transaction",data);
                 //-----------
                 Properties props = new Properties();
@@ -355,12 +355,12 @@ public class lastActivity extends AppCompatActivity {
                 },1500);
             }
             else if (!flag3){
-                moneyDeal.maxQuantity();
-                Intro.transNumb++;
+                kFirstTimeMoney.maxQuantity();
+                aInitialScreen.transNumb++;
                 Calendar calendar = Calendar.getInstance();
                 SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss ");
                 String date = simpleDateFormat.format(calendar.getTime());
-                data=data+"<br />"+"|"+date+"|"+"|"+ moneyDeal.namestr +"|"+"|"+moneyDeal.quantityint+"|"+"|"+moneyDeal.pricestr+"|"+"|"+moneyDeal.ten+"|"+"|"+moneyDeal.twenty+"|"+"|"+moneyDeal.fifty+"|"+"|"+moneyDeal.hundred+"|"+"|"+changeRs+"|"+"|"+Intro.coins+"|"+"|"+Intro.okacetQuant+"|"+"|"+Intro.metrogylQuant+"|"+"|"+Intro.eldoperQuant+"|"+"|"+Intro.doloQuant+"|"+"|"+Intro.gelusil+"|"+"|"+Intro.meftalQuant+"|"+Intro.nutriaQuant+"|"+"|"+Intro.nutribQuant+"|"+"|"+Intro.sanzQuant+"|"+"|"+Intro.condomQuant+"|"+"|"+Intro.whisperQuant+"|"+"|"+Intro.wipesQuant+"|"+"|"+Intro.bisleri+"|"+"|"+Intro.wild+"|"+"|"+Intro.redbull +"|"+"|"+Intro.aloe+"|"+"|"+Intro.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
+                data=data+"<br />"+"|"+date+"|"+"|"+ kFirstTimeMoney.namestr +"|"+"|"+ kFirstTimeMoney.quantityint+"|"+"|"+ kFirstTimeMoney.pricestr+"|"+"|"+ kFirstTimeMoney.ten+"|"+"|"+ kFirstTimeMoney.twenty+"|"+"|"+ kFirstTimeMoney.fifty+"|"+"|"+ kFirstTimeMoney.hundred+"|"+"|"+changeRs+"|"+"|"+ aInitialScreen.coins+"|"+"|"+ aInitialScreen.okacetQuant+"|"+"|"+ aInitialScreen.metrogylQuant+"|"+"|"+ aInitialScreen.eldoperQuant+"|"+"|"+ aInitialScreen.doloQuant+"|"+"|"+ aInitialScreen.gelusil+"|"+"|"+ aInitialScreen.meftalQuant+"|"+ aInitialScreen.nutriaQuant+"|"+"|"+ aInitialScreen.nutribQuant+"|"+"|"+ aInitialScreen.sanzQuant+"|"+"|"+ aInitialScreen.condomQuant+"|"+"|"+ aInitialScreen.whisperQuant+"|"+"|"+ aInitialScreen.wipesQuant+"|"+"|"+ aInitialScreen.bisleri+"|"+"|"+ aInitialScreen.wild+"|"+"|"+ aInitialScreen.redbull +"|"+"|"+ aInitialScreen.aloe+"|"+"|"+ aInitialScreen.pulpy+"|";//1) Name: Dolo-650 Quantity: 100 Price: 1000 TotalPrice: 100000
                 Log.v("Transaction",data);
                 //-----------
                 Properties props = new Properties();
@@ -419,7 +419,7 @@ public class lastActivity extends AppCompatActivity {
             TextView messageTextView = (TextView) group.getChildAt(0);
             messageTextView.setTextSize(32);
             toast.show();
-            Intent intent=new Intent(lastActivity.this,dummyIntro.class);
+            Intent intent=new Intent(lNextTimeMoney.this,cUserInitialScreen.class);
             startActivity(intent);
         }
     }

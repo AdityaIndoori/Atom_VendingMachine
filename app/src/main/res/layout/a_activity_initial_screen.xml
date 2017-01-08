@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aditya.vendicinefinal.Intro">
+    tools:context="com.example.aditya.vendicinefinal.aInitialScreen">
 
     <Button
         android:layout_width="wrap_content"
@@ -28,9 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#00ffffff"
-        android:backgroundTint="#9b9b9b"
-        android:fontFamily="sans-serif"
+        android:layout_margin="12dp"
+        android:textSize="32dp"
+        android:padding="44dp"
         android:onClick="toMainAct"
         android:text="Touch to Continue.." />
 

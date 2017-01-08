@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class drinkSel extends AppCompatActivity {
+public class gDrinksSelection extends AppCompatActivity {
 
     String Mdate,Mmonth,Myear,Edate,Emonth,Eyear;
 
@@ -18,8 +18,8 @@ public class drinkSel extends AppCompatActivity {
     }
 
     public void bisleri(View view){
-        if (Intro.bisleri<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.bisleri<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
             /*
@@ -37,7 +37,7 @@ public class drinkSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
@@ -52,8 +52,8 @@ public class drinkSel extends AppCompatActivity {
     }
 
     public void wild(View view){
-        if (Intro.wild<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.wild<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
             /*
@@ -71,7 +71,7 @@ public class drinkSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
@@ -86,8 +86,8 @@ public class drinkSel extends AppCompatActivity {
     }
 
     public void redbull(View view){
-        if (Intro.redbull <1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.redbull <1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
             /*
@@ -105,7 +105,7 @@ public class drinkSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
@@ -120,8 +120,8 @@ public class drinkSel extends AppCompatActivity {
     }
 
     public void aloe(View view){
-        if (Intro.aloe<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.aloe<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
             /*
@@ -139,7 +139,7 @@ public class drinkSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
@@ -154,8 +154,8 @@ public class drinkSel extends AppCompatActivity {
     }
 
     public void pulpy(View view){
-        if (Intro.pulpy<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.pulpy<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
             /*
@@ -173,7 +173,7 @@ public class drinkSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);

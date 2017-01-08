@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.UUID;
 
-public class Intro extends AppCompatActivity {
+public class aInitialScreen extends AppCompatActivity {
     String address = null;
     String string = null;
     private ProgressDialog progress;
@@ -76,7 +76,7 @@ public class Intro extends AppCompatActivity {
                 if (myBluetooth.isEnabled()){
                     myBluetooth.disable();
                 }
-                Toast.makeText(Intro.this, "All the items are default values and Coins have been RESET to: "+coins, Toast.LENGTH_SHORT).show();
+                Toast.makeText(aInitialScreen.this, "All the items are default values and Coins have been RESET to: "+coins, Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
@@ -102,8 +102,8 @@ public class Intro extends AppCompatActivity {
         }
         fileFlag=true;
         Intent newint = getIntent();
-        address = newint.getStringExtra(DeviceList.EXTRA_ADDRESS);
-        boolean flag = newint.getBooleanExtra(DeviceList.START_FLAG,false);
+        address = newint.getStringExtra(bBluetoothPairedDeviceList.EXTRA_ADDRESS);
+        boolean flag = newint.getBooleanExtra(bBluetoothPairedDeviceList.START_FLAG,false);
 
         if (flag)//If this is true it means the user has selected the bt device he wants to connect to
             new ConnectBT().execute(); //Call the class to connect
@@ -116,7 +116,7 @@ public class Intro extends AppCompatActivity {
         @Override
         protected void onPreExecute()
         {
-            progress = ProgressDialog.show(Intro.this, "Connecting...", "Please wait!!!");  //show a progress dialog
+            progress = ProgressDialog.show(aInitialScreen.this, "Connecting...", "Please wait!!!");  //show a progress dialog
         }
 
         @Override
@@ -165,14 +165,14 @@ public class Intro extends AppCompatActivity {
     }
 
     public void blueMenu(View view){
-        Intent intent=new Intent(this,DeviceList.class);
+        Intent intent=new Intent(this,bBluetoothPairedDeviceList.class);
         startActivity(intent);
     }
 
     public void toMainAct(View view){
         if (isBtConnected)
         {
-            Intent intent=new Intent(this,dummyIntro.class);
+            Intent intent=new Intent(this,cUserInitialScreen.class);
             startActivity(intent);
         }
         else

@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SelectionUI extends AppCompatActivity {
+public class dAllProducts extends AppCompatActivity {
 
     BluetoothSocket btSocket = null;
     byte[] readBuffer;
@@ -25,7 +25,7 @@ public class SelectionUI extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.d_activity_all_products);
-        btSocket=Intro.btSocket;
+        btSocket= aInitialScreen.btSocket;
 /*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -115,18 +115,18 @@ public class SelectionUI extends AppCompatActivity {
 
     public void tabletClick(View view){
         Log.v("Click","Tablet");
-        Intent intent=new Intent(this,tabletSelection.class);
+        Intent intent=new Intent(this,eTabletsSelection.class);
         startActivity(intent);
     }
 
     public void barClick(View view){
-        Intent intent=new Intent(this,nutriSel.class);
+        Intent intent=new Intent(this,fNutribarsSelection.class);
         startActivity(intent);
     }
 
     public void sanzClick(View view){
-        if (Intro.sanzQuant<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.sanzQuant<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
         }
@@ -135,7 +135,7 @@ public class SelectionUI extends AppCompatActivity {
             Mmonth="01";
             Myear="16";
             Edate="02";Emonth="02";Eyear="19";
-            Intent intent=new Intent(this,otherSelection.class);
+            Intent intent=new Intent(this,iPopupOtherProducts.class);
             intent.putExtra("ItemName","Hand Sanitizer");
             intent.putExtra("ItemPrice","80");
             intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
@@ -145,8 +145,8 @@ public class SelectionUI extends AppCompatActivity {
     }
 
     public void condClick(View view){
-        if (Intro.condomQuant<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.condomQuant<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
         }
@@ -155,7 +155,7 @@ public class SelectionUI extends AppCompatActivity {
             Mmonth="07";
             Myear="16";
             Edate="01";Emonth="10";Eyear="18";
-            Intent intent=new Intent(this,otherSelection.class);
+            Intent intent=new Intent(this,iPopupOtherProducts.class);
             intent.putExtra("ItemName","Condoms Packets");
             intent.putExtra("ItemPrice","40");
             intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
@@ -166,8 +166,8 @@ public class SelectionUI extends AppCompatActivity {
 
     public void sanClick(View view){
 
-        if (Intro.whisperQuant<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.whisperQuant<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
         }
@@ -176,7 +176,7 @@ public class SelectionUI extends AppCompatActivity {
             Mmonth="08";
             Myear="16";
             Edate="01";Emonth="01";Eyear="17";
-            Intent intent=new Intent(this,otherSelection.class);
+            Intent intent=new Intent(this,iPopupOtherProducts.class);
             intent.putExtra("ItemName","Sanitary Napkins");
             intent.putExtra("ItemPrice","100");
             intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
@@ -186,8 +186,8 @@ public class SelectionUI extends AppCompatActivity {
     }
 
     public void wipesClick(View view){
-        if (Intro.wipesQuant<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.wipesQuant<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
         }
@@ -196,7 +196,7 @@ public class SelectionUI extends AppCompatActivity {
             Mmonth="06";
             Myear="16";
             Edate="01";Emonth="06";Eyear="18";
-            Intent intent=new Intent(this,otherSelection.class);
+            Intent intent=new Intent(this,iPopupOtherProducts.class);
             intent.putExtra("ItemName","Wet Wipes");
             intent.putExtra("ItemPrice","80");
             intent.putExtra("mfg",Mdate+"/"+Mmonth+"/"+Myear);
@@ -206,12 +206,12 @@ public class SelectionUI extends AppCompatActivity {
     }
 
     public void drinkClick(View view){
-        Intent intent=new Intent(this,drinkSel.class);
+        Intent intent=new Intent(this,gDrinksSelection.class);
         startActivity(intent);
     }
 
     public void backSelClick(View view){
-        Intent intent= new Intent(this,dummyIntro.class);
+        Intent intent= new Intent(this,cUserInitialScreen.class);
         startActivity(intent);
     }
 

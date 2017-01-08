@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/PopUpBG"
-    tools:context="com.example.aditya.vendicinefinal.otherSelection">
+    tools:context="com.example.aditya.vendicinefinal.iPopupOtherProducts">
 
     <ImageView
         android:id="@+id/otherItemImage"

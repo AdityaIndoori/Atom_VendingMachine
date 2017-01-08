@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class PopupActivity extends AppCompatActivity {
+public class jPopupMessage extends AppCompatActivity {
 
     TextView msgDisplay;
 

@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class moneyDeal extends AppCompatActivity {
+public class kFirstTimeMoney extends AppCompatActivity {
     public static String namestr,pricestr;
     public static int quantityint;
     TextView tv1,tv2;
@@ -46,7 +46,7 @@ public class moneyDeal extends AppCompatActivity {
         fifty=0;
         hundred=0;
         //---------------
-        btSocket=Intro.btSocket;
+        btSocket= aInitialScreen.btSocket;
 
         try {
             mmInputStream = btSocket.getInputStream();
@@ -170,7 +170,7 @@ public class moneyDeal extends AppCompatActivity {
             if (flag == 2) {
                 flag++;
                 output = "" + str1;
-                //Toast.makeText(moneyDeal.this, output, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(kFirstTimeMoney.this, output, Toast.LENGTH_SHORT).show();
                 Log.v("onpostMD", "2) The output is:" + output);
             }
             else if (flag == 3) {
@@ -181,25 +181,25 @@ public class moneyDeal extends AppCompatActivity {
                     if (outputPrice >= 10 && outputPrice <= 100) {
                         if (outputPrice==10){
                             ten++;
-                            Intro.totalnotes++;
+                            aInitialScreen.totalnotes++;
                             insertedNote=10;
                         }
                         if (outputPrice==20) {
                             twenty++;
-                            Intro.totalnotes++;
+                            aInitialScreen.totalnotes++;
                             insertedNote=20;
                         }
                         if (outputPrice==50){
                             fifty++;
-                            Intro.totalnotes++;
+                            aInitialScreen.totalnotes++;
                             insertedNote=50;
                         }
                         if (outputPrice==100){
                             hundred++;
-                            Intro.totalnotes++;
+                            aInitialScreen.totalnotes++;
                             insertedNote=100;
                         }
-                        Intent lastIntent = new Intent(getApplicationContext(), lastActivity.class);
+                        Intent lastIntent = new Intent(getApplicationContext(), lNextTimeMoney.class);
                         lastIntent.putExtra("noteInserted",insertedNote);
                         lastIntent.putExtra("Balance", outputPrice - totalPrice);
                         startActivity(lastIntent);
@@ -318,58 +318,58 @@ public class moneyDeal extends AppCompatActivity {
         }
     }
     public  void backMoneyClick(View view){
-        Intent intent= new Intent(this,dummyIntro.class);
+        Intent intent= new Intent(this,cUserInitialScreen.class);
         startActivity(intent);
     }
     public static void maxQuantity(){
         if ("Condoms Packets".equals(namestr))
-            Intro.condomQuant=Intro.condomQuant-quantityint;
+            aInitialScreen.condomQuant= aInitialScreen.condomQuant-quantityint;
         else if ("Hand Sanitizer".equals(namestr))
-            Intro.sanzQuant=Intro.sanzQuant-quantityint;
+            aInitialScreen.sanzQuant= aInitialScreen.sanzQuant-quantityint;
         else if ("Sanitary Napkins".equals(namestr))
-            Intro.whisperQuant=Intro.whisperQuant-quantityint;
+            aInitialScreen.whisperQuant= aInitialScreen.whisperQuant-quantityint;
         else if ("Wet Wipes".equals(namestr))
-            Intro.wipesQuant=Intro.wipesQuant-quantityint;
+            aInitialScreen.wipesQuant= aInitialScreen.wipesQuant-quantityint;
         else {
             switch (namestr){
                 case "OKACET COLD":
-                    Intro.okacetQuant=Intro.okacetQuant-quantityint;
+                    aInitialScreen.okacetQuant= aInitialScreen.okacetQuant-quantityint;
                     break;
                 case "METROGYL - 400":
-                    Intro.metrogylQuant=Intro.metrogylQuant-quantityint;
+                    aInitialScreen.metrogylQuant= aInitialScreen.metrogylQuant-quantityint;
                     break;
                 case "ELDOPER":
-                    Intro.eldoperQuant=Intro.eldoperQuant-quantityint;
+                    aInitialScreen.eldoperQuant= aInitialScreen.eldoperQuant-quantityint;
                     break;
                 case "DOLO - 650":
-                    Intro.doloQuant=Intro.doloQuant-quantityint;
+                    aInitialScreen.doloQuant= aInitialScreen.doloQuant-quantityint;
                     break;
                 case "GELUSIL":
-                    Intro.gelusil=Intro.gelusil-quantityint;
+                    aInitialScreen.gelusil= aInitialScreen.gelusil-quantityint;
                     break;
                 case "MEFTAL SPAS":
-                    Intro.meftalQuant=Intro.meftalQuant-quantityint;
+                    aInitialScreen.meftalQuant= aInitialScreen.meftalQuant-quantityint;
                     break;
                 case "Merry Berry":
-                    Intro.nutriaQuant=Intro.nutriaQuant-quantityint;
+                    aInitialScreen.nutriaQuant= aInitialScreen.nutriaQuant-quantityint;
                     break;
                 case "Choco Delite":
-                    Intro.nutribQuant=Intro.nutribQuant-quantityint;
+                    aInitialScreen.nutribQuant= aInitialScreen.nutribQuant-quantityint;
                     break;
                 case "Water Bottle":
-                    Intro.bisleri=Intro.bisleri-quantityint;
+                    aInitialScreen.bisleri= aInitialScreen.bisleri-quantityint;
                     break;
                 case "Wild Vitamin Drink\n(Dragon Fruit)":
-                    Intro.wild=Intro.wild-quantityint;
+                    aInitialScreen.wild= aInitialScreen.wild-quantityint;
                     break;
                 case "Zago Protein Drink\n(Chocolate)":
-                    Intro.redbull =Intro.redbull -quantityint;
+                    aInitialScreen.redbull = aInitialScreen.redbull -quantityint;
                     break;
                 case "Aloevera Litchi Drink":
-                    Intro.aloe=Intro.aloe-quantityint;
+                    aInitialScreen.aloe= aInitialScreen.aloe-quantityint;
                     break;
                 case "Minute Maid Pulpy Orange":
-                    Intro.pulpy=Intro.pulpy-quantityint;
+                    aInitialScreen.pulpy= aInitialScreen.pulpy-quantityint;
                     break;
                 default:
                     break;

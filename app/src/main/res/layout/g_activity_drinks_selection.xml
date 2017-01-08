@@ -4,7 +4,7 @@
     android:id="@+id/activity_wipes_sel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aditya.vendicinefinal.drinkSel">
+    tools:context="com.example.aditya.vendicinefinal.gDrinksSelection">
 
     <ImageView
         android:layout_width="match_parent"

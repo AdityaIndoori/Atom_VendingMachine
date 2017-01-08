@@ -6,23 +6,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import static com.example.aditya.vendicinefinal.Intro.coins;
+import static com.example.aditya.vendicinefinal.aInitialScreen.coins;
 
-public class dummyIntro extends AppCompatActivity {
+public class cUserInitialScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.c_activity_user_initial_screen);
-        Log.v("TotalNotes","The Total Number of Notes are: " + Intro.totalnotes);
+        Log.v("TotalNotes","The Total Number of Notes are: " + aInitialScreen.totalnotes);
     }
 
     public void toSelAct(View view){
-        if (coins>20 || Intro.totalnotes<450){
-            Intent intent=new Intent(this,SelectionUI.class);
+        if (coins>20 || aInitialScreen.totalnotes<450){
+            Intent intent=new Intent(this,dAllProducts.class);
             startActivity(intent);
         }
         else{
-            Intent popIntent = new Intent(this,PopupActivity.class);
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","Machine under Servicing");
             startActivity(popIntent);
         }
@@ -30,8 +30,8 @@ public class dummyIntro extends AppCompatActivity {
 
 
     public void setupscr(View v){
-        Intro.quantflag=false;
-        Intent intent2=new Intent(this,Intro.class);
+        aInitialScreen.quantflag=false;
+        Intent intent2=new Intent(this,aInitialScreen.class);
         intent2.putExtra("Bluetooth","On");
         startActivity(intent2);
     }

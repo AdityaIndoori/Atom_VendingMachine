@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Intro">
+        <activity android:name=".aInitialScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,24 +20,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DeviceList"
+            android:name=".bBluetoothPairedDeviceList"
             android:theme="@style/Base.Theme.AppCompat.Dialog.FixedSize" />
-        <activity android:name=".SelectionUI" />
-        <activity android:name=".tabletSelection" />
+        <activity android:name=".dAllProducts" />
+        <activity android:name=".eTabletsSelection" />
         <activity
-            android:name=".PopupQuantity"
+            android:name=".hPopupEFG"
             android:theme="@style/NoTitleDialog" />
         <activity
-            android:name=".otherSelection"
+            android:name=".iPopupOtherProducts"
             android:theme="@style/NoTitleDialog" />
-        <activity android:name=".moneyDeal" />
-        <activity android:name=".lastActivity" />
-        <activity android:name=".dummyIntro" />
+        <activity android:name=".kFirstTimeMoney" />
+        <activity android:name=".lNextTimeMoney" />
+        <activity android:name=".cUserInitialScreen" />
         <activity
-            android:name=".PopupActivity"
+            android:name=".jPopupMessage"
             android:theme="@style/NoTitleDialog" />
-        <activity android:name=".nutriSel" />
-        <activity android:name=".drinkSel"></activity>
+        <activity android:name=".fNutribarsSelection" />
+        <activity android:name=".gDrinksSelection"></activity>
     </application>
 
 </manifest>

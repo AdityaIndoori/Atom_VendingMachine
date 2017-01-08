@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class nutriSel extends AppCompatActivity {
+public class fNutribarsSelection extends AppCompatActivity {
 
     String Mdate,Mmonth,Myear,Edate,Emonth,Eyear;
 
@@ -18,8 +18,8 @@ public class nutriSel extends AppCompatActivity {
     }
 
     public void nutria(View view){
-        if (Intro.nutriaQuant<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.nutriaQuant<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
             /*
@@ -37,7 +37,7 @@ public class nutriSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
@@ -52,8 +52,8 @@ public class nutriSel extends AppCompatActivity {
     }
 
     public void nutrib(View view){
-        if (Intro.nutribQuant<1){
-            Intent popIntent = new Intent(this,PopupActivity.class);
+        if (aInitialScreen.nutribQuant<1){
+            Intent popIntent = new Intent(this,jPopupMessage.class);
             popIntent.putExtra("String","The product you have chosen is out of stock");
             startActivity(popIntent);
         }
@@ -65,7 +65,7 @@ public class nutriSel extends AppCompatActivity {
             String tablet_price = tabPriceView.getText().toString();
             String substr = tablet_price.substring(2);
             Log.v("SUBSTRING",substr);
-            Intent intent=new Intent(this,PopupQuantity.class);
+            Intent intent=new Intent(this,hPopupEFG.class);
             intent.putExtra("TabletName",tablet_name);
             intent.putExtra("TabletPrice",substr);
             intent.putExtra("TabletDetails",details);
