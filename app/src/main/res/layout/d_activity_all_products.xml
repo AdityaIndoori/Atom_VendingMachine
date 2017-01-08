@@ -9,196 +9,190 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/doc_blur"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/doc_blur" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textSize="42sp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Choose a Category"
-        android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-light"/>
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Choose a Category"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="42sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView4"
         android:layout_alignParentBottom="true"
+        android:layout_below="@id/textView4"
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/relativeTab"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
-            android:layout_weight="1"
-            android:id="@+id/relativeTab"
-            android:elevation="8dp"
-            android:background="#5b0099cc"
             android:layout_alignParentTop="true"
             android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="#5b0099cc"
+            android:elevation="8dp"
             android:onClick="tabletClick">
 
             <ImageView
+                android:id="@+id/tabletImg"
                 android:layout_width="?android:attr/listPreferredItemHeight"
                 android:layout_height="match_parent"
-                android:id="@+id/tabletImg"
-                android:src="@drawable/tabimg"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/tabimg" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/tabletImg"
+                android:gravity="center"
                 android:text="Tablets"
                 android:textSize="28dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeight"
-                android:layout_weight="1"
-                android:id="@+id/relativeBar"
-                android:elevation="8dp"
-                android:background="#5b0099cc"
-                android:layout_margin="12dp"
-                android:onClick="barClick">
-
-                <ImageView
-                    android:layout_width="?android:attr/listPreferredItemHeight"
-                    android:layout_height="match_parent"
-                    android:id="@+id/barImg"
-                    android:src="@drawable/nutriimg"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/barImg"
-                    android:text="Nutrition Bar Chocolates"
-                    android:textSize="26dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    />
-            </RelativeLayout>
-
-        <RelativeLayout
+            android:id="@+id/relativeBar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
-            android:layout_weight="1"
-            android:id="@+id/relativeSanitizer"
-            android:elevation="8dp"
-            android:background="#5b0099cc"
             android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="#5b0099cc"
+            android:elevation="8dp"
+            android:onClick="barClick">
+
+            <ImageView
+                android:id="@+id/barImg"
+                android:layout_width="?android:attr/listPreferredItemHeight"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/nutriimg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/barImg"
+                android:gravity="center"
+                android:text="Nutrition Bar Chocolates"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeSanitizer"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="#5b0099cc"
+            android:elevation="8dp"
             android:onClick="sanzClick">
 
             <ImageView
+                android:id="@+id/sanzImg"
                 android:layout_width="?android:attr/listPreferredItemHeight"
                 android:layout_height="match_parent"
-                android:id="@+id/sanzImg"
-                android:src="@drawable/detsanz"
-                android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/detsanz" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/sanzImg"
+                android:gravity="center"
                 android:text="Hand Sanitizer"
                 android:textSize="26dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeCond"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
-            android:layout_weight="1"
-            android:id="@+id/relativeCond"
-            android:elevation="8dp"
-            android:background="#5b0099cc"
             android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="#5b0099cc"
+            android:elevation="8dp"
             android:onClick="condClick">
 
             <ImageView
+                android:id="@+id/condImg"
                 android:layout_width="?android:attr/listPreferredItemHeight"
                 android:layout_height="match_parent"
-                android:id="@+id/condImg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/condimg"/>
+                android:src="@drawable/condimg" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/condImg"
+                android:gravity="center"
                 android:text="Condoms Packets"
                 android:textSize="28dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativepads"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
-            android:layout_weight="1"
-            android:id="@+id/relativepads"
-            android:elevation="8dp"
-            android:background="#5b0099cc"
             android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="#5b0099cc"
+            android:elevation="8dp"
             android:onClick="sanClick">
 
             <ImageView
+                android:id="@+id/padsImg"
                 android:layout_width="?android:attr/listPreferredItemHeight"
                 android:layout_height="match_parent"
-                android:id="@+id/padsImg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sanitimg"/>
+                android:src="@drawable/sanitimg" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/padsImg"
+                android:gravity="center"
                 android:text="Sanitary Napkins"
                 android:textSize="28dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativebottle"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeight"
-            android:layout_weight="1"
-            android:id="@+id/relativebottle"
-            android:elevation="8dp"
-            android:background="#5b0099cc"
             android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:background="#5b0099cc"
+            android:elevation="8dp"
             android:onClick="drinkClick">
 
             <ImageView
+                android:id="@+id/bottleImg"
                 android:layout_width="?android:attr/listPreferredItemHeight"
                 android:layout_height="match_parent"
-                android:id="@+id/bottleImg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/waterimg"/>
+                android:src="@drawable/waterimg" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/bottleImg"
+                android:gravity="center"
                 android:text="Drinks"
                 android:textSize="28dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
 

@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class tabletSelection extends AppCompatActivity {
 
@@ -16,7 +14,7 @@ public class tabletSelection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tablet_selection);
+        setContentView(R.layout.e_activity_tablets_selection);
     }
 
 

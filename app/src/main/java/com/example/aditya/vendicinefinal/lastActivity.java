@@ -63,7 +63,7 @@ public class lastActivity extends AppCompatActivity {
         //You will need to work those Grey cells out to figure out this part of the app...
         autoClick=false;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_last);
+        setContentView(R.layout.l_activity_next_time_money);
         fileBTN=true;
         lastMsg = (TextView) findViewById(R.id.lasMessage);
         changeRs=0;
@@ -104,19 +104,19 @@ public class lastActivity extends AppCompatActivity {
             Balance = -Balance;
             Log.v("NewBalance",""+Balance);
             if (Balance <= 10) {
-                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 10 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+".00 /-\n"+"Balance Amount to be Entered: ₹ "+Balance+"\n"+"Please enter  ₹ 10 more\nAnd click OK");
             }
             else if (Balance > 10 && Balance <= 20) {
-                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 20 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+".00 /-\n\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 20 more\nAnd click OK");
             }
             else if (Balance > 20 && Balance <= 50) {
-                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 50 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+".00 /-\n\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 50 more\nAnd click OK");
             }
             else if (Balance > 50 && Balance <= 100) {
-                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 100 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+".00 /-\n\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter  ₹ 100 more\nAnd click OK");
             }
             else if (Balance>100) {
-                lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter ₹ 100 more\nAnd click OK");
+                lastMsg.setText("You have just Entered: ₹"+noteInserted+".00 /-\n\n"+"Balance Amount to be Entered: ₹ "+Balance+".00 /-\n"+"Please enter ₹ 100 more\nAnd click OK");
             }
         }
         else if (Balance > 0) {
@@ -129,7 +129,7 @@ public class lastActivity extends AppCompatActivity {
             changeRs=Balance;
             tnks.setTextSize(86);
             tnks.setText("ThankYou!");
-            lastMsg.setText("You have just Entered: ₹"+noteInserted+"/-\n"+"Please Collect your product and "+ "₹ "+Balance+".00 /-\n And Click OK to End Transaction\n" +
+            lastMsg.setText("You have just Entered: ₹"+noteInserted+".00 /-\n\n"+"Please Collect your product and "+ "₹ "+Balance+".00 /-\n And Click OK to End Transaction\n" +
                     "Stay Healthy!" );
             Handler handler3 = new Handler();
             handler3.postDelayed(new Runnable() {

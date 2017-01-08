@@ -9,37 +9,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="blueMenu"
-        android:text="BLUETOOTH"/>
+        android:text="BLUETOOTH" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/atom"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/atom" />
     </RelativeLayout>
 
     <Button
+        android:id="@+id/continue_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#00ffffff"
-        android:id="@+id/continue_btn"
         android:backgroundTint="#9b9b9b"
-        android:text="Touch to Continue.."
         android:fontFamily="sans-serif"
-        android:onClick="toMainAct"/>
+        android:onClick="toMainAct"
+        android:text="Touch to Continue.." />
 
     <Button
-        android:text="Coin reset"
+        android:id="@+id/coinRst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="coinReset"
-        android:id="@+id/coinRst"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="coinReset"
+        android:text="Coin reset" />
 
 
 </RelativeLayout>

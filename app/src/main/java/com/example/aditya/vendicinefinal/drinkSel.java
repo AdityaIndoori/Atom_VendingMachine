@@ -14,7 +14,7 @@ public class drinkSel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drink_sel);
+        setContentView(R.layout.g_activity_drinks_selection);
     }
 
     public void bisleri(View view){

@@ -12,7 +12,7 @@ public class PopupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup);
+        setContentView(R.layout.j_activity_popup_message);
         Bundle extras = getIntent().getExtras();
         String message = extras.getString("String");
         msgDisplay = (TextView)findViewById(R.id.popupTxt);

@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StreamCorruptedException;
 
 public class otherSelection extends AppCompatActivity {
     TextView otherName;
@@ -42,7 +41,7 @@ public class otherSelection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_selection);
+        setContentView(R.layout.i_activity_popup_other_products);
         otherName=(TextView)findViewById(R.id.otherItemName);
         otherPrice=(TextView)findViewById(R.id.otherItemPrice);
         otherQuantity=(TextView)findViewById(R.id.otherItemQuant);

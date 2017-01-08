@@ -5,251 +5,269 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aditya.vendicinefinal.drinkSel">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/doc_blur"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/doc_blur" />
+
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:text="Choose desired Drink "
-        android:id="@+id/title"
+        android:layout_margin="8dp"
         android:gravity="center"
-        android:layout_margin="8dp"/>
+        android:text="Choose desired Drink "
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_below="@+id/title"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/bislerirel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/bislerirel"
-            android:elevation="8dp"
-            android:layout_weight="1"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#5b0099cc"
             android:clickable="true"
+            android:elevation="8dp"
             android:onClick="bisleri">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:id="@+id/bisleriimage"
-                    android:src="@drawable/bottle"
-                    android:scaleType="fitCenter"
-                    android:layout_weight="1"/>
-                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginLeft="18dp"
-                    android:text="Water Bottle"
-                    android:textStyle="bold"
-                    android:textSize="35sp"
-                    android:id="@+id/bisleri_name" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bottle" />
+
                 <TextView
+                    android:id="@+id/bisleri_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Water Bottle"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bisleri_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="₹ 10"
-                    android:textSize="40sp"
-                    android:id="@+id/bisleri_price" />
+                    android:textSize="40sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/wildrel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/wildrel"
-            android:elevation="8dp"
-            android:layout_weight="1"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#5b0099cc"
             android:clickable="true"
+            android:elevation="8dp"
             android:onClick="wild">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:id="@+id/wild_img"
-                    android:layout_weight="1"
-                    android:src="@drawable/wild"/>
-                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/wild" />
+
+                <TextView
+                    android:id="@+id/wild_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="18dp"
                     android:text="Wild Vitamin Drink\n(Dragon Fruit)"
                     android:textSize="33sp"
-                    android:id="@+id/wild_name" />
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/wild_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="₹ 100"
-                    android:textSize="40sp"
-                    android:id="@+id/wild_price" />
+                    android:textSize="40sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/zagorel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/zagorel"
-            android:layout_weight="1"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#5b0099cc"
             android:clickable="true"
             android:onClick="redbull">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/zago_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/zago_img"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/redbull"/>
+                    android:src="@drawable/redbull" />
+
                 <TextView
+                    android:id="@+id/redbull_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="18dp"
                     android:text="Redbull"
                     android:textSize="33sp"
-                    android:id="@+id/redbull_name" />
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/redbull_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="₹ 120"
-                    android:textSize="40sp"
-                    android:id="@+id/redbull_price" />
+                    android:textSize="40sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/aloerel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/aloerel"
-            android:layout_weight="1"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#5b0099cc"
             android:clickable="true"
             android:onClick="aloe">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/aloe_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/aloe_img"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/aloe"/>
+                    android:src="@drawable/aloe" />
+
                 <TextView
+                    android:id="@+id/aloe_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="18dp"
                     android:text="Aloevera Litchi Drink"
                     android:textSize="33sp"
-                    android:id="@+id/aloe_name" />
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/aloe_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="₹ 50"
-                    android:textSize="40sp"
-                    android:id="@+id/aloe_price" />
+                    android:textSize="40sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/pulpyrel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/pulpyrel"
-            android:layout_weight="1"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#5b0099cc"
             android:clickable="true"
             android:onClick="pulpy">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/pulpy_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/pulpy_img"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/pulpy"/>
+                    android:src="@drawable/pulpy" />
+
                 <TextView
+                    android:id="@+id/pulpy_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="18dp"
                     android:text="Minute Maid Pulpy Orange"
                     android:textSize="33sp"
-                    android:id="@+id/pulpy_name" />
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/pulpy_price"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="₹ 40"
-                    android:textSize="40sp"
-                    android:id="@+id/pulpy_price" />
+                    android:textSize="40sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:layout_weight="1"
-            android:text="Click here to go Back"
-            android:gravity="center"
-            android:textSize="40dp"
-            android:padding="12dp"
-            android:textStyle="bold"
-            android:onClick="exitActiv"
-            android:fontFamily="sans-serif-condensed"
             android:background="@color/COntinueButton"
-            android:layout_margin="4dp"/>
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:onClick="exitActiv"
+            android:padding="12dp"
+            android:text="Click here to go Back"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -39,7 +39,7 @@ public class moneyDeal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_money_deal);
+        setContentView(R.layout.k_activity_first_time_money);
         flagBTN=true;
         ten=0;
         twenty=0;

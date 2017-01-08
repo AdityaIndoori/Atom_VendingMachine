@@ -9,14 +9,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.aditya.vendicinefinal.PopupActivity">
+
     <TextView
+        android:id="@+id/popupTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="38sp"
-        android:id="@+id/popupTxt"
         android:gravity="center"
         android:textColor="@android:color/black"
-        android:textStyle="bold"/>
+        android:textSize="38sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

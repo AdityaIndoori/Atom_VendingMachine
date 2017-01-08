@@ -7,38 +7,36 @@
     tools:context="com.example.aditya.vendicinefinal.dummyIntro">
 
 
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/atom"
-            android:scaleType="fitCenter"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:src="@drawable/atom" />
 
     <Button
+        android:id="@+id/ContinueBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
         android:background="@color/COntinueButton"
-        android:id="@+id/ContinueBtn"
-        android:textSize="42dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Touch to Continue.."
         android:onClick="toSelAct"
         android:padding="22dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginBottom="80dp"
-        />
+        android:text="Touch to Continue.."
+        android:textSize="42dp" />
 
 
     <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:onClick="setupscr"
-        android:background="@color/coinReset"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="@color/coinReset"
+        android:onClick="setupscr" />
 
 </RelativeLayout>

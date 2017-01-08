@@ -24,7 +24,7 @@ public class SelectionUI extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selection_ui);
+        setContentView(R.layout.d_activity_all_products);
         btSocket=Intro.btSocket;
 /*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

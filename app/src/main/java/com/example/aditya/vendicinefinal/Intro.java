@@ -35,7 +35,7 @@ public class Intro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.a_activity_initial_screen);
         myBluetooth=BluetoothAdapter.getDefaultAdapter();
 
         Bundle extras = getIntent().getExtras();

@@ -36,7 +36,7 @@ public class PopupQuantity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup_quantity);
+        setContentView(R.layout.h_activity_popup_efg);
         tabImgV=(ImageView)findViewById(R.id.tabletImg);
         TextView nameView = (TextView)findViewById(R.id.name);
         TextView priceView = (TextView)findViewById(R.id.price);

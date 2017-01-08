@@ -14,7 +14,7 @@ public class nutriSel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nutri_sel);
+        setContentView(R.layout.f_activity_nutribars_selection);
     }
 
     public void nutria(View view){

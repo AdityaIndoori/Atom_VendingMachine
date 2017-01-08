@@ -29,7 +29,7 @@ public class DeviceList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_device_list);
+        setContentView(R.layout.b_activity_bluetooth_paireddevice_list);
 
         //Calling widgets
         btnPaired = (Button)findViewById(R.id.button);
